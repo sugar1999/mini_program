@@ -1,0 +1,81 @@
+.s-switch {
+  font-size: $switch-size;
+  position: relative;
+  display: inline-block;
+  box-sizing: content-box;
+  width: $switch-width;
+  height: $switch-height;
+  cursor: pointer;
+  transition: all $switch-transition-duration;
+  color: $switch-inactive-color;
+  border: $switch-border;
+  border-radius: 1em;
+  background: currentColor;
+
+  &__node {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    transition: transform $switch-transition-duration cubic-bezier(.3, 1.05, .4, 1.05);
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: $switch-node-box-shadow;
+  }
+
+  ::v-deep &__loading {
+    width: 45%;
+    height: 45%;
+
+    .s-loading__wrap {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &--on.s-switch {
+    color: $switch-active-color;
+
+    &--info {
+      color: $info;
+    }
+
+    &--primary {
+      color: $primary;
+    }
+
+    &--success {
+      color: $success;
+    }
+
+    &--warning {
+      color: $warning;
+    }
+
+    &--danger {
+      color: $danger;
+    }
+  }
+
+  &--on &__node {
+    transform: translateX($switch-on-node-translateX);
+  }
+
+  &--on ::v-deep &__loading {
+    color: currentColor;
+  }
+
+  &--loading {
+    cursor: default;
+    opacity: $loading-opacity;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: $disabled-opacity;
+  }
+}

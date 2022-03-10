@@ -1,0 +1,59 @@
+// Button基础变量
+$button-border-width: $border-width-base;
+$button-border-radius: $border-radius-sm;
+$button-round-border-radius: $border-radius-max;
+$button-loading-size: 36rpx;
+$button-icon-size: 1.2em;
+$button-circle-padding: 10rpx;
+
+// Button 类型主题配置
+$button-default-color: $text-color;
+$button-default-background: $background-color-light;
+$button-default-border-color: $border-color;
+
+$button-info-color: $white;
+$button-info-background: $info;
+$button-info-border-color: $info;
+$button-info-plain-color: $info;
+$button-info-plain-background: $background-color-light;
+
+$button-primary-color: $white;
+$button-primary-background: $primary;
+$button-primary-border-color: $primary;
+$button-primary-plain-color: $primary;
+$button-primary-plain-background: $background-color-light;
+
+$button-success-color: $white;
+$button-success-background: $success;
+$button-success-border-color: $success;
+$button-success-plain-color: $success;
+$button-success-plain-background: $background-color-light;
+
+$button-warning-color: $white;
+$button-warning-background: $warning;
+$button-warning-border-color: $warning;
+$button-warning-plain-color: $warning;
+$button-warning-plain-background: $background-color-light;
+
+$button-danger-color: $white;
+$button-danger-background: $danger;
+$button-danger-border-color: $danger;
+$button-danger-plain-color: $danger;
+$button-danger-plain-background: $background-color-light;
+
+// Button 尺寸配置
+$button-normal-height: 88rpx;
+$button-normal-padding: 0 30rpx;
+$button-normal-font-size: $font-size-md;
+
+$button-mini-height: 48rpx;
+$button-mini-padding: 0 $padding-base;
+$button-mini-font-size: $font-size-xs;
+
+$button-small-height: 64rpx;
+$button-small-padding: 0 $padding-xs;
+$button-small-font-size: $font-size-sm;
+
+$button-large-height: 100rpx;
+$button-large-padding: 0;
+$button-large-font-size: 32rpx;

@@ -1,0 +1,75 @@
+@import '../../styles/mixins/hairline.scss';
+
+.s-cell {
+  font-size: $cell-font-size;
+  line-height: $cell-line-height;
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: $cell-vertical-padding $cell-horizontal-padding;
+  color: $cell-color;
+  border-color: $cell-border-color;
+  background: $cell-background;
+
+  &__title,
+  &__value,
+  &__right {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  &__title,
+  &__right {
+    flex-shrink: 0;
+  }
+
+  ::v-deep#{&} {
+    &__icon {
+      font-size: $cell-icon-size;
+      flex-shrink: 0;
+      margin-right: $padding-xs;
+    }
+
+    &__arrow-icon {
+      font-size: $cell-arrow-icon-size;
+      color: $cell-arrow-icon-color;
+    }
+  }
+
+  &__value {
+    flex: 1;
+    justify-content: flex-end;
+    margin-left: $padding-xs;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: $cell-value-color;
+
+    &:empty {
+      margin-left: 0;
+    }
+  }
+
+  &__right {
+    margin-left: $padding-base;
+
+    &:empty {
+      margin-left: 0;
+    }
+  }
+
+  &--border::after {
+    @include hairline-bottom($cell-horizontal-padding, $cell-horizontal-padding);
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  &--hover {
+    background: $cell-hover-background;
+  }
+}

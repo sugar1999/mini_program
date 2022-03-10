@@ -1,0 +1,49 @@
+.s-image {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  &__wrap {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__loading,
+  &__error {
+    font-size: $image-placeholder-font-size;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: $image-placeholder-text-color;
+    background: $image-placeholder-background;
+  }
+
+  ::v-deep#{&} {
+    &__loading-icon {
+      font-size: $image-loading-icon-size;
+      color: $image-loading-icon-color;
+    }
+
+    &__error-icon {
+      font-size: $image-error-icon-size;
+      color: $image-error-icon-color;
+    }
+  }
+
+  &--round {
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "打车代驾顺风车货运租车 出行系统 小程序APP源码",
+    "version": "3.1.0",
+    "description": "打车 代驾 顺风车 货运 租车 5大模块自定义开关。开源不易记得好评哦，有疑问请联系作者vx：C500580 ",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "打车",
+        "代驾",
+        "顺风车",
+        "货运",
+        "租车"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "number-precision": "^1.5.0",
+        "uview-ui": "^1.8.2",
+        "vuex": "^3.6.0",
+		"firstui-uni": "^1.2.0"
+    },
+    "id": "datang-ddcar2",
+    "dcloudext": {
+        "category": [
+            "uni-app前端模板",
+            "uni-app前端项目模板"
+        ]
+    }
+}

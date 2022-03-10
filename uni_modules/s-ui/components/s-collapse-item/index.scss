@@ -1,0 +1,78 @@
+@import '../../styles/mixins/hairline.scss';
+
+.s-collapse-item {
+  position: relative;
+  border-color: $cell-border-color;
+
+  &::v-deep &__title {
+    &::after {
+      display: none;
+    }
+
+    .s-cell {
+      &__title {
+        flex: 1;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+
+      &__value {
+        flex: none;
+      }
+
+      &__arrow-icon {
+        transition: transform $collapse-item-transition-duration;
+      }
+    }
+  }
+
+  &__wrap {
+    overflow: hidden;
+    transition: height $collapse-item-transition-duration ease-in-out;
+    will-change: height;
+  }
+
+  &__content {
+    font-size: $collapse-item-content-font-size;
+    line-height: $collapse-item-content-line-height;
+    padding: $collapse-item-content-padding;
+    color: $collapse-item-content-text-color;
+    background: $collapse-item-content-background;
+  }
+
+  &--border::after {
+    @include hairline-bottom($cell-horizontal-padding, $cell-horizontal-padding);
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  &--expanded#{&}--border> ::v-deep &__title::after {
+    display: block;
+  }
+
+  &--expanded> ::v-deep &__title {
+    .s-cell {
+      &__arrow-icon {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &--disabled> ::v-deep &__title {
+    cursor: not-allowed;
+
+    .s-cell {
+
+      &__title,
+      &__arrow-icon {
+        color: $disabled-color;
+      }
+    }
+  }
+}
+
+s-collapse-item:not(:last-child) .s-collapse-item::after {
+  display: block;
+}

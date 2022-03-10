@@ -1,0 +1,14 @@
+.s-cell-group {
+  box-sizing: border-box;
+
+  &__title {
+    font-size: $cell-group-title-font-size;
+    box-sizing: border-box;
+    padding: $cell-group-title-padding;
+    color: $cell-group-title-color;
+  }
+
+  &__content {
+    border-color: $cell-group-content-border-color;
+  }
+}

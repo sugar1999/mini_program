@@ -1,0 +1,13 @@
+$switch-size: 60rpx;
+$switch-width: 2em;
+$switch-height: 1em;
+$switch-node-size: 1em;
+$switch-on-node-translateX: 1em;
+$switch-node-background: $background-color-light;
+$switch-node-box-shadow: 0 6rpx 2rpx 0 rgba($black, .05),
+0 4rpx 4rpx 0 rgba($black, .1),
+0 6rpx 6rpx 0 rgba($black, .05);
+$switch-inactive-color: $white;
+$switch-active-color: $primary;
+$switch-transition-duration: $animation-duration-base;
+$switch-border: $border-width-base solid rgba($black, .1);

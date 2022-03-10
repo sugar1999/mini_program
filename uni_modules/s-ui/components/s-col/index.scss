@@ -1,0 +1,24 @@
+$span: 100 / $col-span-max;
+
+.s-col {
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  @for $i from 1 through $col-span-max {
+    &--#{$i} {
+      flex-basis: #{($span * $i) + '%'};
+    }
+
+    &--offset-#{$i} {
+      margin-left: #{($span * $i) + '%'};
+    }
+
+    &--vertical-offset-#{$i} {
+      margin-top: #{($span * $i) + '%'};
+    }
+
+    &--flex-#{$i} {
+      flex-grow: #{$i};
+    }
+  }
+}

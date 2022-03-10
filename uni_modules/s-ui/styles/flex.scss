@@ -1,0 +1,70 @@
+/*
+ * @Description: flex布局样式
+ * @Author: 无痕
+ * @Email: 350801869@qq.com
+ * @Date: 2021-10-19 13:39:10
+ * @LastEditTime: 2021-11-04 11:38:19
+ * @LastEditors: 无痕
+ */
+.s-flex {
+  display: flex;
+  flex-direction: row;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--shrink {
+    flex-shrink: 0;
+  }
+
+  &--justify-top {
+    justify-content: flex-start;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
+  &--justify-space-between {
+    justify-content: space-between;
+  }
+
+  &--justify-space-around {
+    justify-content: space-around;
+  }
+
+  &--justify-space-evenly {
+    justify-content: space-evenly;
+  }
+
+  &--align-stretch {
+    align-items: stretch;
+  }
+
+  &--align-start {
+    align-items: flex-start;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-end {
+    align-items: flex-end;
+  }
+
+  @for $i from 1 through 10 {
+    &-#{$i} {
+      flex-grow: #{$i};
+    }
+  }
+}

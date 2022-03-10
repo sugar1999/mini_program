@@ -1,0 +1,118 @@
+.s-popup {
+  position: fixed;
+  top: var(--window-top);
+  right: 0;
+  bottom: var(--window-bottom);
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, $popup-mask-opacity);
+  }
+
+  &__wrap {
+    position: absolute;
+    z-index: 2;
+    max-height: 100%;
+    pointer-events: auto;
+  }
+
+  &__close {
+    font-size: $popup-close-size;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    padding: 24rpx 26rpx;
+    color: $popup-close-color;
+  }
+
+  &__mask,
+  &__wrap {
+    animation-duration: inherit;
+    animation-fill-mode: both;
+    backface-visibility: hidden;
+  }
+
+  // center
+  &--center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--center &__wrap {
+    position: relative;
+  }
+
+  // left
+  &--left &__wrap {
+    left: 0;
+    height: 100%;
+  }
+
+  // right
+  &--right &__wrap {
+    right: 0;
+    height: 100%;
+  }
+
+  // top
+  &--top &__wrap {
+    top: 0;
+    width: 100%;
+  }
+
+  // bottom
+  &--bottom &__wrap {
+    bottom: 0;
+    width: 100%;
+  }
+
+  // round
+  &--round &__wrap {
+    border-radius: $popup-round-border-radius;
+  }
+
+  &--left#{&}--round &__wrap {
+    border-radius: 0 $popup-round-border-radius $popup-round-border-radius 0;
+  }
+
+  &--right#{&}--round &__wrap {
+    border-radius: $popup-round-border-radius 0 0 $popup-round-border-radius;
+  }
+
+  &--top#{&}--round &__wrap {
+    border-radius: 0 0 $popup-round-border-radius $popup-round-border-radius;
+  }
+
+  &--bottom#{&}--round &__wrap {
+    border-radius: $popup-round-border-radius $popup-round-border-radius 0 0;
+  }
+
+  &--enter &__mask,
+  &--enter &__wrap {
+    animation-timing-function: $animate-timing-function-enter;
+  }
+
+  &--leave &__mask,
+  &--leave &__wrap {
+    animation-timing-function: $animate-timing-function-leave;
+  }
+
+  &--enter &__mask {
+    animation-name: s-animate-fade-enter;
+  }
+
+  &--leave &__mask {
+    animation-name: s-animate-fade-leave;
+  }
+}

@@ -1,0 +1,55 @@
+.s-radio {
+  display: inline-flex;
+  align-items: center;
+  color: $radio-text-color;
+
+  ::v-deep &__icon {
+    font-size: $radio-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: $animation-duration-fast;
+    transition-property: color, border-color, background-color;
+    color: transparent;
+    border: 1px solid $radio-border-color;
+
+    &::before {
+      font-size: .7em;
+    }
+
+    &--round {
+      border-radius: 50%;
+    }
+
+    &--square {
+      border-radius: $radio-square-border-radius;
+    }
+  }
+
+  &__label {
+    margin-left: $radio-label-margin;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &--checked ::v-deep &__icon {
+    color: $white;
+    border-color: $radio-checked-color;
+    background-color: $radio-checked-color;
+  }
+
+  &--disabled ::v-deep &__icon {
+    border-color: $radio-border-color;
+    background-color: $radio-disabled-background-color;
+  }
+
+  &--disabled#{&}--checked ::v-deep &__icon {
+    color: $radio-disabled-icon-color;
+  }
+
+  &--disabled &__label {
+    color: $radio-disabled-label-color;
+  }
+}

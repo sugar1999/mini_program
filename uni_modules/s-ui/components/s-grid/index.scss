@@ -1,0 +1,13 @@
+.s-grid {
+  overflow: hidden;
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
+    &::after {
+      border-width: 1px 0 0 1px;
+    }
+  }
+}

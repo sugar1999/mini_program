@@ -1,0 +1,9 @@
+.s-waterfall {
+  display: flex;
+  align-items: flex-start;
+
+  &__column {
+    flex-grow: 1;
+    width: 0;
+  }
+}

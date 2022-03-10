@@ -1,0 +1,129 @@
+@import '../../styles/mixins/hairline.scss';
+
+.s-tabbar {
+  z-index: $tabbar-zindex;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: $tabbar-border-color;
+  background: $tabbar-background;
+
+  &-list {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    height: $tabbar-height;
+  }
+
+  &-placeholder {
+    height: $tabbar-height;
+  }
+
+  &-item {
+    font-size: $tabbar-item-font-size;
+    line-height: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100%;
+    padding: $tabbar-item-padding;
+    cursor: pointer;
+    color: $tabbar-item-color;
+
+    &--align-center {
+      justify-content: center;
+    }
+
+    &__mid-button-circle {
+      position: absolute;
+      z-index: 1;
+      top: $tabbar-item-mid-button-icon-top;
+      left: 50%;
+      width: $tabbar-item-mid-button-circle-size;
+      height: $tabbar-item-mid-button-circle-size;
+      transform: translate(-50%, -50%);
+      border-color: $tabbar-border-color;
+      border-radius: 50%;
+      background: $tabbar-background;
+
+      &--shadow {
+        box-shadow: $tabbar-box-shadow;
+      }
+    }
+
+    &__mid-button-circle-mask {
+      position: absolute;
+      z-index: 2;
+      top: 1px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $tabbar-background;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        content: '';
+        transform: translateY(-50%);
+        background: inherit;
+      }
+    }
+
+    &__icon {
+      font-size: $tabbar-item-icon-size;
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ::v-deep {
+        .s-icon {
+          display: block;
+        }
+
+        .s-badge {
+          margin-top: $padding-base;
+        }
+      }
+    }
+
+    &__text {
+      position: relative;
+      z-index: 3;
+      white-space: nowrap;
+    }
+
+    &--mid-button {
+      &::before {
+        content: '';
+      }
+    }
+
+    &--mid-button &__icon {
+      font-size: $tabbar-item-mid-button-icon-size;
+      position: absolute;
+      top: $tabbar-item-mid-button-icon-top;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--active {
+      color: $tabbar-item-active-color;
+    }
+  }
+
+  &--fixed {
+    position: fixed;
+    bottom: 0;
+  }
+
+  &--shadow {
+    box-shadow: $tabbar-box-shadow;
+  }
+}

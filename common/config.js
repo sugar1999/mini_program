@@ -1,0 +1,7 @@
+export const baseUrl = "http://112.124.35.32:8081/xiangliban"
+export const rentBaseUrl = "http://112.124.35.32:8081/xiangliban"
+export const userBaseUrl = "http://112.124.35.32:8083/xiangliban"
+export const educationBaseUrl = "http://112.124.35.32:8083/xiangliban"
+export const travelBaseUrl = "http://112.124.35.32:8087/xiangliban"
+export const cureBaseUrl = "http://112.124.35.32:8085/xiangliban"
+export const repairBaseUrl = "http://112.124.35.32:8083/xiangliban"

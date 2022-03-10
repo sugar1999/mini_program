@@ -1,0 +1,462 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
+			"fui-(.*)": "firstui-uni/firstui/fui-$1/fui-$1.vue",
+			"^s-(.*)": "@/uni_modules/s-ui/components/s-$1/s-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/tabbar",
+			"style": {
+				"navigationBarTitleText": "宅家学IT",
+				"navigationStyle": "custom"
+			}
+		},
+
+
+		{
+			"path": "pages/news/news",
+			"style": {
+				"navigationBarTitleText": "资讯详情"
+			}
+		},
+		{
+			"path": "pages/video",
+			"style": {
+				"navigationBarTitleText": "视频播放",
+				"usingComponents": {
+					// #ifdef  MP-WEIXIN 
+					"txv-video": "plugin://tencentvideo/video"
+					// #endif
+				}
+			}
+		},
+		{
+			"path": "pages/project/list",
+			"style": {
+				"navigationBarTitleText": "项目展示",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/project/project",
+			"style": {
+				"navigationBarTitleText": "项目展示",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/timeline",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/design",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}
+	],
+
+	"subPackages": [{
+			"root": "page_travel",
+			"pages": [{
+				"path": "travel_index/travel_index",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			}]
+		},
+		{
+			"root": "page_rent",
+			"pages": [{
+				"path": "rent_index/rent_index",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			}, {
+				"path": "rent_room_details/rent_room_details",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "rent_publish_house/rent_publish_house",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "rent_my_house/rent_my_house",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}    ,{
+                    "path" : "rent_appointment_view/rent_appointment_view",
+                    "style": {
+                    	"navigationStyle": "custom"
+                    }
+                
+                }
+            ]
+		},
+		{
+			"root": "page_express",
+			"pages": [{
+				"path": "express_index/express_index",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "express_mypackage/express_mypackage",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "express_door_to_door/express_door_to_door",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "door_appoint/door_appoint",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "express_i_want_to_appoint/express_i_want_to_appoint",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "door_order_lookup_user/door_order_lookup_user",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "door_finished/door_finished",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "mypackage_details/mypackage_details",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "door_appointment_no_order/door_appointment_no_order",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}]
+		},
+		{
+			"root": "page_repair",
+			"pages": [{
+				"path": "repair_index/repair_index",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "repair_details/repair_details",
+				"style": {
+					"navigationStyle": "custom"
+				}
+
+			}, {
+				"path": "repair_apply/repair_apply",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+				}
+
+			}]
+		},
+		{
+			"root": "page_vote",
+			"pages": [{
+					"path": "vote_index/vote_index",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "vote_item/vote_item",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "vote_person/vote_person",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "page_cure",
+			"pages": [{
+					"path": "cure_index/cure_index",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "cure_item/cure_take_number_check",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "cure_item/cure_inquiry",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "cure_item/cure_inquiry_check",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "cure_item/cure_inquiry_check_detail",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "cure_item/cure_take_number",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "cure_item/cure_visit",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "cure_item/cure_visit_check",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path":"cure_item/cure_visit_check_detail",
+					"style":{
+						"navigationStyle":"custom"
+					}
+				},
+				{
+					"path": "cure_item/cure_human",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "cure_item/cure_message",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "page_transportation",
+			"pages": [{
+					"path": "transportation_index/transportation_index",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "transportation_item/bus_select",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "transportation_item/car_order",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "transportation_item/home/index",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "transportation_together/transportation_together",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "tn_components",
+			"pages": [{
+					"path": "pano",
+					"style": {}
+				}, {
+					"path": "bggrad",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "bgcolor",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "ancube",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "anloading",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "mimicry",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "mapLocus",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "charts",
+					"style": {
+						"navigationBarTitleText": "图表展示"
+					}
+				},
+				{
+					"path": "poster",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "discern",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "sign",
+					"style": {
+						"navigationBarTitleText": "电子签名"
+					}
+				}, {
+					"path": "district",
+					"style": {
+						"navigationBarTitleText": "行政区图"
+					}
+				},
+				{
+					"path": "search",
+					"style": {
+						"navigationStyle": "custom",
+						"navigationBarTitleText": "便捷查询"
+					}
+				},
+				{
+					"path": "openDocument",
+					"style": {
+						"navigationStyle": "custom",
+						"navigationBarTitleText": "文档预览"
+					}
+				},
+				{
+					"path": "company",
+					"style": {
+						"navigationBarTitleText": "自定义相机"
+					}
+				},
+				{
+					"path": "timeline",
+					"style": {
+						"navigationBarTitleText": "时间轴"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/me",
+			"pages": [{
+					"path": "mentalTest/list",
+					"style": {
+						"navigationBarTitleText": "答题测试",
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "mentalTest/index",
+					"style": {
+						"navigationBarTitleText": "答题测试",
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "mentalTest/explain",
+					"style": {
+						"navigationBarTitleText": "答题规则说明"
+					}
+				},
+				{
+					"path": "salary",
+					"style": {
+						"navigationBarTitleText": "薪资排行",
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "aboutMe",
+					"style": {
+
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "course",
+					"style": {
+						"navigationBarTitleText": "班级课程",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"backgroundTextStyle": "dark",
+		"backgroundColorTop": "#F1F4FA",
+		"backgroundColorBottom": "#F1F4FA"
+	}
+}

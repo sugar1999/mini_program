@@ -1,0 +1,50 @@
+@import './mixins/hairline.scss';
+
+[class*='s-hairline'] {
+  &::after {
+    @include hairline();
+  }
+}
+
+.s-hairline {
+
+  &,
+  &--top,
+  &--left,
+  &--right,
+  &--bottom,
+  &--left-right,
+  &--top-bottom,
+  &--surround {
+    position: relative;
+    border-color: $border-color;
+  }
+
+  &--top::after {
+    border-top-width: 1px;
+  }
+
+  &--left::after {
+    border-left-width: 1px;
+  }
+
+  &--right::after {
+    border-right-width: 1px;
+  }
+
+  &--bottom::after {
+    border-bottom-width: 1px;
+  }
+
+  &--left-right::after {
+    border-width: 0 1px;
+  }
+
+  &--top-bottom::after {
+    border-width: 1px 0;
+  }
+
+  &--surround::after {
+    border-width: 1px;
+  }
+}

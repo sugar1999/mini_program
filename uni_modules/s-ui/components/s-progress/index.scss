@@ -1,0 +1,51 @@
+.s-progress {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+
+  &-bar {
+    position: relative;
+    overflow: hidden;
+    flex-grow: 1;
+    height: $progress-bar-height;
+    border-radius: $progress-bar-border-radius;
+    background: $progress-bar-background;
+
+    &__inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      transition: width $animation-duration-base ease;
+      text-align: right;
+      white-space: nowrap;
+      border-radius: inherit;
+      background: $progress-color;
+
+      &::after {
+        display: inline-block;
+        height: 100%;
+        content: '';
+        vertical-align: middle;
+      }
+
+      &-text {
+        font-size: $progress-bar-inner-text-size;
+        display: inline-block;
+        margin: 0 10rpx;
+        vertical-align: middle;
+        color: $progress-bar-inner-text-color;
+      }
+    }
+  }
+
+  &__text {
+    font-size: $progress-text-size;
+    margin-left: 20rpx;
+    color: $progress-text-color;
+  }
+
+  &--text-inside &-bar {
+    height: $progress-text-inside-bar-height;
+  }
+}

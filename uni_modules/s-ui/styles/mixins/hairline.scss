@@ -1,0 +1,38 @@
+@mixin hairline-common() {
+  content: ' ';
+  position: absolute;
+  border-width: 0;
+  border-style: solid;
+  border-color: inherit;
+  border-radius: inherit;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+@mixin hairline() {
+  @include hairline-common();
+  width: 200%;
+  height: 200%;
+  left: 0;
+  top: 0;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+@mixin hairline-top($left: 0, $right: 0) {
+  @include hairline-common();
+  left: $left;
+  right: $right;
+  top: 0;
+  border-top-width: 1px;
+  transform: scaleY(0.5);
+}
+
+@mixin hairline-bottom($left: 0, $right: 0) {
+  @include hairline-common();
+  left: $left;
+  right: $right;
+  bottom: 0;
+  border-bottom-width: 1px;
+  transform: scaleY(0.5);
+}

@@ -1,0 +1,10 @@
+.s-sticky {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+
+  &--fixed {
+    position: fixed;
+    z-index: 9;
+  }
+}

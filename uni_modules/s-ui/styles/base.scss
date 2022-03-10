@@ -1,0 +1,35 @@
+page {
+  font-family: $base-font-family;
+  font-size: $font-size-md;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button::after {
+  border-width: 0;
+}
+
+scroll-view {
+  display: block;
+  width: 100%;
+}
+
+.s-hide-scrollbar {
+
+  &::-webkit-scrollbar,
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+}

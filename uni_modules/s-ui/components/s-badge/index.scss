@@ -1,0 +1,51 @@
+.s-badge {
+  font-size: $badge-font-size;
+  font-weight: normal;
+  line-height: 1;
+  position: static;
+  z-index: $badge-zindex;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: $badge-size;
+  min-height: $badge-size;
+  padding: $badge-padding;
+  transform-origin: center center;
+  color: $badge-color;
+  border-radius: $border-radius-max;
+  background: $badge-background;
+
+  &--dot {
+    font-size: 0;
+    width: $badge-dot-size;
+    min-width: 0;
+    height: $badge-dot-size;
+    min-height: 0;
+    padding: 0;
+    border-radius: 100%;
+    background: $badge-dot-color;
+  }
+
+  &--info {
+    background: $info;
+  }
+
+  &--primary {
+    background: $primary;
+  }
+
+  &--success {
+    background: $success;
+  }
+
+  &--warning {
+    background: $warning;
+  }
+
+  &--danger {
+    background: $danger;
+  }
+}

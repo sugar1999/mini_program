@@ -1,0 +1,62 @@
+.s-dialog {
+  ::v-deep {
+    .s-popup__wrap {
+      width: $dialog-width;
+      border-radius: $dialog-border-radius;
+      background: $dialog-background;
+    }
+  }
+
+  &__header {
+    font-size: $dialog-header-font-size;
+    font-weight: $dialog-header-font-weight;
+    padding: $dialog-header-padding;
+    text-align: center;
+    color: $dialog-header-color;
+  }
+
+  &__message {
+    font-size: $dialog-message-font-size;
+    line-height: $dialog-message-line-height;
+    overflow-y: auto;
+    max-height: $dialog-message-max-height;
+    padding: $dialog-message-padding;
+    text-align: center;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: $dialog-message-color;
+  }
+
+  &__footer {
+    display: flex;
+    border-color: $dialog-border-color;
+  }
+
+  ::v-deep#{&} {
+    &__action {
+      font-size: $dialog-action-font-size;
+      font-weight: $dialog-action-font-weight;
+      flex: 1 0 0;
+      height: $dialog-action-height;
+      border-color: $dialog-border-color;
+      border-radius: 0;
+
+      &::after {
+        border-width: 0;
+        border-radius: 0;
+      }
+
+      &:nth-child(n+2)::after {
+        border-left-width: 1px;
+      }
+    }
+
+    &__cancel-action {
+      color: $dialog-cancel-color;
+    }
+
+    &__confirm-action {
+      color: $dialog-confirm-color;
+    }
+  }
+}

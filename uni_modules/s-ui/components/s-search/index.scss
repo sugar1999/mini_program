@@ -1,0 +1,104 @@
+.s-search {
+  display: flex;
+  box-sizing: border-box;
+  height: $search-height;
+  padding: $search-padding;
+  color: $search-color;
+  background: $search-background;
+
+  &__content {
+    display: flex;
+    flex: 1 0 0;
+    height: 100%;
+    border-radius: $search-content-border-radius;
+    background: $search-content-background;
+  }
+
+  &__input {
+    font-size: $search-input-font-size;
+    line-height: 1.4em;
+    display: flex;
+    align-items: center;
+    flex: 1 0 0;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 0;
+    padding: $search-input-padding;
+    color: inherit;
+    background: transparent;
+  }
+
+  ::v-deep &__placeholder {
+    color: $search-placeholder-color;
+  }
+
+  &__action {
+    font-size: $search-action-font-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: $search-action-margin;
+    color: $search-action-color;
+  }
+
+  &__prefix {
+    font-size: $search-prefix-size;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    margin: $search-prefix-margin;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__suffix {
+    font-size: $search-suffix-size;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    margin: $search-suffix-margin;
+    color: $search-suffix-color;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__clear {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &--align-center &__input {
+    text-align: center;
+  }
+
+  &--align-right &__input {
+    text-align: right;
+  }
+
+  &--shape-round &__content {
+    border-radius: $search-content-shape-border-radius;
+  }
+
+  &--disabled,
+  &--disabled &__placeholder {
+    color: $search-disabled-color;
+  }
+
+  &--disabled &__content {
+    justify-content: center;
+  }
+
+  &--disabled &__input {
+    flex: none;
+    width: inherit;
+    text-align: center;
+  }
+}

@@ -1,0 +1,68 @@
+.s-tabs {
+  position: relative;
+  box-sizing: border-box;
+  height: $tabs-height;
+  border-color: $tabs-border-color;
+  background: $tabs-background;
+
+  &__scroll {
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  &__wrap,
+  .s-tab-list {
+    position: relative;
+    display: inline-flex;
+    box-sizing: border-box;
+    min-width: 100%;
+    height: 100%;
+  }
+
+  .s-tab-list {
+    z-index: 3;
+    white-space: nowrap;
+  }
+
+  &__line {
+    position: absolute;
+    z-index: 2;
+    box-sizing: border-box;
+    height: $tabs-line-height;
+    pointer-events: none;
+    border-radius: $tabs-line-border-radius;
+    background-color: $tabs-line-color;
+  }
+}
+
+.s-tab {
+  font-size: $tabs-font-size;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: $tabs-padding;
+  cursor: pointer;
+  color: $tabs-color;
+
+  &__content {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  &::v-deep &__badge {
+    transform: $tabs-badge-transform;
+  }
+
+  &--active {
+    color: $tabs-active-color;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    color: $tabs-disabled-color;
+  }
+}

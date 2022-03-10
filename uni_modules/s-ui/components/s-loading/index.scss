@@ -1,0 +1,69 @@
+.s-loading {
+  font-size: $loading-size;
+  display: inline-block;
+  box-sizing: border-box;
+  color: $loading-color;
+
+  &__wrap {
+    width: 1em;
+    height: 1em;
+  }
+
+  &__spinner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: s-animate-rotate $loading-animation-duration linear infinite;
+    animation-timing-function: steps(12);
+
+    &-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &::before {
+        display: block;
+        box-sizing: border-box;
+        width: 2px;
+        height: 30%;
+        margin: 0 auto;
+        content: ' ';
+        border-radius: 40%;
+        background-color: currentColor;
+      }
+
+      @for $i from 1 through 12 {
+        &:nth-of-type(#{$i}) {
+          transform: rotate($i * 30deg);
+          opacity: 1 - (.75 / 12) * ($i - 1);
+        }
+      }
+    }
+  }
+
+  &__circular {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: s-animate-rotate $loading-animation-duration linear infinite;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 160%;
+      height: 160%;
+      content: ' ';
+      transform: scale(.625);
+      transform-origin: 0 0;
+      pointer-events: none;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-right-color: currentColor;
+      border-radius: 100%;
+    }
+  }
+}

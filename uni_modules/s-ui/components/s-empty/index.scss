@@ -1,0 +1,20 @@
+.s-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $empty-padding;
+  text-align: center;
+
+  &::v-deep &__img {
+    display: block;
+    width: $empty-img-width;
+    height: $empty-img-height;
+  }
+
+  &__text {
+    font-size: $empty-text-font-size;
+    line-height: $line-height-sm;
+    margin-top: $empty-text-margin-top;
+    color: $empty-text-color;
+  }
+}

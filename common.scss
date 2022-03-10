@@ -1,0 +1,249 @@
+/* 颜色 */
+.bg{
+	background-color: $bg;
+}
+.bg-blue{
+	background-color: $blue;
+}
+.bg-green{
+	background-color: $green;
+}
+.change-green{
+	background: linear-gradient(to right,#00b6b4,#00d496);
+}
+.bg-purple{
+	background-color: $purple;
+}
+.bg-red{
+	background-color: $red;
+}
+.bg-orange{
+	background-color: $orange;
+}
+.bg-white{
+	background-color: $white;
+}
+.green{
+	color: $green;
+}
+.blue{
+	color: $blue;
+}
+.blue-1{
+	color: $blue-1;
+}
+.purple{
+	color: $purple;
+}
+.red{
+	color: $red;
+}
+.white{
+	color:$white;
+}
+.gray{
+	color:$gray;
+}
+.gray-1{
+	color:$gray-1;
+}
+.gray-2{
+	color:$gray-2;
+}
+
+.bg-gray-2{
+	background-color:$gray-2;
+}
+
+// padding margin
+@for $value from 1 through 100{
+  .pd-#{$value}, .ptb-#{$value}, .pt-#{$value} { padding-top: $value*1rpx; }
+  .pd-#{$value}, .ptb-#{$value}, .pb-#{$value} { padding-bottom: $value*1rpx; }
+  .pd-#{$value}, .plr-#{$value}, .pl-#{$value} { padding-left: $value*1rpx; }
+  .pd-#{$value}, .plr-#{$value}, .pr-#{$value} { padding-right: $value*1rpx; }
+  .mg-#{$value}, .mtb-#{$value}, .mt-#{$value} { margin-top: $value*1rpx; }
+  .mg-#{$value}, .mtb-#{$value}, .mb-#{$value} { margin-bottom: $value*1rpx; }
+  .mg-#{$value}, .mlr-#{$value}, .ml-#{$value} { margin-left: $value*1rpx; }
+  .mg-#{$value}, .mlr-#{$value}, .mr-#{$value} { margin-right: $value*1rpx; }
+}
+
+// size
+@for $value from 20 through 50{
+  .size-#{$value}{ font-size: $value*1rpx; }
+}
+
+// radius
+.radius {
+  border-radius: 50%;
+}
+@for $value from 5 through 50{
+  .radius-#{$value}{ border-radius: $value*1rpx; }
+}
+
+/* flex */
+.center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.flex_l{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.flex_r{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.flex1{
+	display: flex;
+}
+.flex-start{
+	justify-content: flex-start;
+}
+.flex-end{
+	justify-content: flex-end;
+}
+.flex-center{
+	justify-content: center;
+}
+.flex-around{
+	justify-content: space-around;
+}
+.flex-between{
+	justify-content: space-between;
+}
+.flex-top{
+	align-items: flex-start;
+}
+.flex-middle{
+	align-items: center;
+}
+.flex-bottom{
+	align-items: flex-end;
+}
+.flex-column{
+	flex-direction: column;
+}
+.flex-wrap{
+	flex-wrap: wrap;
+}
+
+/* 边框 */
+.border{
+	 border: $border-width-base solid $border-color;
+}
+.border-blue{
+     border: $border-width-base solid $blue;
+}
+.border-green{
+     border: $border-width-base solid $green;
+}
+.bt {
+  border-top: $border-width-base solid $border-color;
+}
+.bb {
+  border-bottom: $border-width-base solid $border-color;
+}
+.bl {
+  border-left: $border-width-base solid $border-color;
+}
+.br {
+  border-right: $border-width-base solid $border-color;
+}
+
+
+
+/* 全屏 */
+.vw100 {
+  width: 100vw !important;
+}
+.vh100 {
+  height: 100vh !important;
+}
+.min100 {
+  min-height: 100vh !important;
+}
+.h100 {
+  height: 100% !important;
+}
+.w100 {
+  width: 100% !important;
+}
+
+/* 其他 */
+.relative{
+	position: relative;
+}
+.absolute{
+	position: absolute;
+}
+.fixed{
+	position: fixed;
+}
+.fixed-bottom{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+}
+.block{
+	display: block;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.autowrap {
+  word-wrap: break-word;
+  word-break: normal;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.bold {
+  font-weight: 700;
+}
+.over-hidden {
+  overflow: hidden;
+}
+
+
+/* uview内置样式 */
+/* u-line-1,u-line-2  一行省略 */
+/* u-font-26  x>= 20 && x <= 40时，表现为rpx性质 */
+/* 
+u-padding-x == u-p-x
+u-padding-left-x == u-p-l-x
+u-padding-top-x == u-p-t-x
+u-padding-right-x == u-p-r-x
+u-padding-bottom-x == u-p-b-x
+u-margin-x == u-m-x
+u-margin-left-x == u-m-l-x
+u-margin-top-x == u-m-t-x
+u-margin-right-x == u-m-r-x
+u-margin-bottom-x == u-m-b-x 
+取值范围：
+1-80(可以等于80)之间的偶数(双数) 和 5的倍数
+*/
+
+/* 
+ .u-flex-1 {
+ 	flex: 1; 取值范围 1~12
+ }
+ */

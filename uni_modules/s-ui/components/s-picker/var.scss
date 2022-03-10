@@ -1,0 +1,19 @@
+$picker-background: $background-color-light;
+$picker-header-height: 100rpx;
+$picker-body-height: 560rpx;
+$picker-indicator-height: 80rpx;
+$picker-mask-background: linear-gradient(180deg, rgba($white, .95), rgba($white, .6)),
+linear-gradient(0deg, rgba($white, .95), rgba($white, .6));
+$picker-title-font-size: $font-size-lg;
+$picker-header-border-color: $border-color-light;
+$picker-action-padding: 0 $padding-md;
+$picker-action-font-size: $font-size-md;
+$picker-confirm-action-color: $primary;
+$picker-confirm-action-disabled-color: $disabled-color;
+$picker-cancel-action-color: $gray-6;
+$picker-option-font-size: 30rpx;
+$picker-option-color: $black;
+$picker-option-padding: 0 $padding-base;
+$picker-loading-icon-size: 58rpx;
+$picker-loading-icon-color: $primary;
+$picker-loading-background: rgba($white, .9);

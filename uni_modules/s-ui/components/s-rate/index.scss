@@ -1,0 +1,46 @@
+.s-rate {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  user-select: none;
+  touch-action: none;
+
+  &__item {
+    position: relative;
+    margin-left: $rate-icon-gutter;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  ::v-deep &__icon {
+    font-size: $rate-icon-size;
+    display: block;
+    color: $rate-icon-void-color;
+
+    &--half {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    &--full {
+      color: $rate-icon-full-color;
+    }
+
+    &--disabled {
+      color: $rate-icon-disabled-color;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--readonly {
+    cursor: default;
+  }
+}

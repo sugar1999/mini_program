@@ -1,0 +1,96 @@
+@import '../../styles/mixins/hairline.scss';
+
+.s-action-sheet {
+  ::v-deep .s-popup__wrap {
+    overflow: hidden;
+    color: $action-sheet-item-text-color;
+    background: $action-sheet-background;
+  }
+
+  &__header {
+    font-size: $action-sheet-header-font-size;
+    font-weight: $font-weight-bold;
+    line-height: $action-sheet-header-height;
+    position: relative;
+    text-align: center;
+    border-color: $border-color;
+
+    &::after {
+      @include hairline-bottom();
+    }
+  }
+
+  &__description {
+    font-size: $action-sheet-description-font-size;
+    line-height: $action-sheet-description-line-height;
+    position: relative;
+    padding: $padding-md;
+    text-align: center;
+    color: $action-sheet-description-color;
+    border-color: $border-color;
+
+    &::after {
+      @include hairline-bottom();
+    }
+  }
+
+  &__content {
+    max-height: $action-sheet-content-max-height;
+  }
+
+  & ::v-deep &__item,
+  & ::v-deep &__cancel {
+    font-size: $action-sheet-item-font-size;
+    line-height: $action-sheet-item-line-height;
+    display: block;
+    width: 100%;
+    padding: 28rpx $padding-md;
+    cursor: pointer;
+    border-width: 0;
+    border-color: $border-color;
+    border-radius: 0;
+    background: $action-sheet-item-background;
+
+    .s-button__text {
+      white-space: normal;
+    }
+
+    &.s-button--hover::before {
+      opacity: .05;
+    }
+
+    &::after {
+      border-width: 0;
+      border-radius: 0;
+    }
+  }
+
+  & ::v-deep &__item {
+    color: $action-sheet-item-text-color;
+
+    &:nth-child(n+2)::after {
+      border-top-width: 1px;
+    }
+
+    &.s-button--disabled {
+      opacity: 1;
+      color: $action-sheet-item-disabled-text-color;
+    }
+  }
+
+  & ::v-deep &__cancel {
+    color: $action-sheet-cancel-text-color;
+  }
+
+  &__subname {
+    font-size: $action-sheet-subname-font-size;
+    line-height: $action-sheet-subname-line-height;
+    margin-top: $padding-xs;
+    color: $action-sheet-subname-color;
+  }
+
+  &__gap {
+    height: $action-sheet-gap-height;
+    background: $action-sheet-gap-color;
+  }
+}

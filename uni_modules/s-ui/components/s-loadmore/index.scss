@@ -1,0 +1,35 @@
+.s-loadmore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: $loadmore-padding;
+
+  &__loading {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+
+    ::v-deep .s-loading {
+      font-size: $loadmore-loading-size;
+      color: $loadmore-loading-color;
+    }
+  }
+
+  &__loading &__text {
+    margin-left: $padding-xs;
+  }
+
+  &::v-deep &__divider {
+    flex: 1;
+    margin: 0;
+  }
+
+  &__text {
+    font-size: $loadmore-text-size;
+    line-height: 1.2em;
+    min-height: 1.2em;
+    color: $loadmore-text-color;
+  }
+}

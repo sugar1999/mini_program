@@ -1,0 +1,12 @@
+.s-transition {
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+
+  &--enter {
+    animation-timing-function: $animate-timing-function-enter;
+  }
+
+  &--leave {
+    animation-timing-function: $animate-timing-function-leave;
+  }
+}

@@ -1,0 +1,60 @@
+// 用于 行个数，宫格，有间距的等宽高 布局
+@mixin gridItem($count: 1, $rowGetter: 0rpx, $columnGetter: 0rpx, $borderWidth: 0rpx, $borderColor: #efefef) {
+  width: calc((100% - #{($count - 1) * $rowGetter}) / #{$count});
+  box-sizing: border-box;
+
+  @if $rowGetter>0 {
+    &:not(:nth-child(#{$count}n + 1)) {
+      margin-left: $rowGetter;
+    }
+  }
+
+  @if $columnGetter>0 {
+    &:nth-child(n + #{$count + 1}) {
+      margin-top: $columnGetter;
+    }
+  }
+
+  @if $borderWidth>0 {
+    &:not(:nth-child(#{$count}n + 1)) {
+      border-left: $borderWidth solid $borderColor;
+    }
+
+    &:nth-child(n + #{$count + 1}) {
+      border-top: $borderWidth solid $borderColor;
+    }
+  }
+}
+
+// 画三角形
+@mixin triangle($width, $height, $color, $direction) {
+  $width: $width/2;
+  $border-color-style: $height solid $color;
+  $transparent-border-style: $width solid transparent;
+  height: 0;
+  width: 0;
+
+  @if $direction==up {
+    border-bottom: $border-color-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  }
+
+  @else if $direction==right {
+    border-left: $border-color-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+
+  @else if $direction==down {
+    border-top: $border-color-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  }
+
+  @else if $direction==left {
+    border-right: $border-color-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+}

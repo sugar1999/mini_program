@@ -1,0 +1,15 @@
+.s-index-anchor {
+  font-size: $index-anchor-font-size;
+  font-weight: $font-weight-bold;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: $index-anchor-padding;
+  color: $index-anchor-color;
+  border-color: $index-anchor-border-color;
+  background: $index-anchor-background;
+
+  &--active {
+    color: $index-list-active-color;
+  }
+}

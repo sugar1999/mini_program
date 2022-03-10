@@ -1,0 +1,28 @@
+.s-swipe-action {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+
+  &__wrap {
+    transition-timing-function: cubic-bezier(.18, .89, .32, 1);
+    transition-property: transform;
+  }
+
+  &__left,
+  &__right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+
+  &__left {
+    left: 0;
+    transform: translate(-100%);
+  }
+
+  &__right {
+    right: 0;
+    transform: translate(100%);
+  }
+}

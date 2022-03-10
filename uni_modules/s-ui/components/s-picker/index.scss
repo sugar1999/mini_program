@@ -1,0 +1,105 @@
+.s-picker {
+  ::v-deep .s-popup__wrap {
+    background: $picker-background;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $picker-header-height;
+    border-color: $picker-header-border-color;
+
+    &-left,
+    &-right {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    font-size: $picker-title-font-size;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ::v-deep#{&} {
+    &__action {
+      font-size: $picker-action-font-size;
+      height: 100%;
+      padding: $picker-action-padding;
+    }
+
+    &__cancel-action {
+      color: $picker-cancel-action-color;
+    }
+
+    &__confirm-action {
+      color: $picker-confirm-action-color;
+
+      &--disabled {
+        color: $picker-confirm-action-disabled-color;
+      }
+    }
+
+    &__indicator {
+      height: $picker-indicator-height;
+    }
+
+    &__mask {
+      background: $picker-mask-background;
+      background-repeat: no-repeat;
+      background-position: top, bottom;
+    }
+  }
+
+  &__body {
+    height: $picker-body-height;
+  }
+
+  &__picker-view {
+    height: 100%;
+  }
+
+  &__option {
+    font-size: $picker-option-font-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: $picker-option-padding;
+    color: $picker-option-color;
+
+    &-text {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__loading {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $picker-loading-background;
+
+    ::v-deep .s-loading {
+      font-size: $picker-loading-icon-size;
+      color: $picker-loading-icon-color;
+    }
+  }
+}

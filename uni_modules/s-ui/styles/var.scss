@@ -1,0 +1,128 @@
+// 基础色值
+$black: #000;
+$white: #fff;
+
+$gray-1: #f7f8fa;
+$gray-2: #f2f3f5;
+$gray-3: #ebedf0;
+$gray-4: #dcdee0;
+$gray-5: #c8c9cc;
+$gray-6: #969799;
+$gray-7: #646566;
+$gray-8: #323233;
+
+// 背景色
+$background-color: $gray-1;
+$background-color-light: $white;
+
+// 主题色
+$primary: #2979ff;
+$primary-light: #ecf5ff;
+$primary-dark: #2b85e4;
+$primary-disabled: #a0cfff;
+
+// 信息色
+$info: #909399;
+$info-light: #f4f4f5;
+$info-dark: #82848a;
+$info-disabled: #c8c9cc;
+
+// 警告色
+$warning: #ff976a;
+$warning-light: #fcf4e5;
+$warning-dark: #df9220;
+$warning-disabled: #fbdd95;
+
+// 成功色
+$success: #07c160;
+$success-light: #dbf1e1;
+$success-dark: #18b566;
+$success-disabled: #71d5a1;
+
+// 危险色
+$danger: #ee0a24;
+$danger-light: #fef0f0;
+$danger-dark: #dd6161;
+$danger-disabled: #fab6b6;
+
+// 文字颜色
+$text-color: $gray-8;
+$text-color-2: $gray-6;
+$text-color-3: $gray-5;
+$content-color: $gray-7;
+$tips-color: $gray-6;
+$light-color: $gray-5;
+$placeholder-color: $gray-5;
+$active-color: $gray-2;
+$hover-color: $gray-2;
+$disabled-color: $gray-5;
+
+// 边框颜色
+$border-color: $gray-3;
+$border-color-light: $gray-2;
+
+// 字体
+$base-font-family: 'Open Sans',
+-apple-system,
+BlinkMacSystemFont,
+'Helvetica Neue',
+Helvetica,
+Segoe UI,
+Arial,
+Roboto,
+'PingFang SC',
+'miui',
+'Hiragino Sans GB',
+'Microsoft Yahei',
+sans-serif;
+
+// 文字大小
+$font-size-xs: 20rpx;
+$font-size-sm: 24rpx;
+$font-size-md: 28rpx;
+$font-size-lg: 32rpx;
+
+// 文字粗细
+$font-weight-bold: 500;
+
+// 文字行高
+$line-height-xs: 1.2;
+$line-height-sm: 1.4;
+$line-height-md: 1.6;
+$line-height-lg: 1.8;
+
+// 透明度
+$active-opacity: .7;
+$hover-opacity: .7;
+$loading-opacity: 1;
+$disabled-opacity: .5;
+
+// 内边距
+$padding-base: 8rpx;
+$padding-xs: $padding-base * 2;
+$padding-sm: $padding-base * 3;
+$padding-md: $padding-base * 4;
+$padding-lg: $padding-base * 6;
+$padding-xl: $padding-base * 8;
+
+// 边框宽度
+$border-width-base: 1px;
+
+// 圆角
+$border-radius-sm: 4rpx;
+$border-radius-md: 8rpx;
+$border-radius-lg: 16rpx;
+$border-radius-max: 9999px;
+
+// 阴影
+$box-shadow-base: 0 4rpx 8rpx rgba($black, .12),
+0 0 12rpx rgba($black, .04);
+$box-shadow-dark: 0 4rpx 8rpx rgba($black, .12),
+0 0 12rpx rgba($black, .12);
+$box-shadow-light: 0 4rpx 24rpx 0 rgba($black, .1);
+
+// 动画
+$animation-duration-base: .3s;
+$animation-duration-fast: .2s;
+$animate-timing-function-enter: ease-out;
+$animate-timing-function-leave: ease-in;
