@@ -5,6 +5,7 @@
 			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
 			"fui-(.*)": "firstui-uni/firstui/fui-$1/fui-$1.vue",
 			"^s-(.*)": "@/uni_modules/s-ui/components/s-$1/s-$1.vue"
+			
 		}
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
@@ -441,9 +442,9 @@
 					}
 				},
 				{
-					"path": "course",
+					"path": "scenic",
 					"style": {
-						"navigationBarTitleText": "班级课程",
+						"navigationBarTitleText": "旅游景点",
 						"navigationStyle": "custom"
 					}
 				}

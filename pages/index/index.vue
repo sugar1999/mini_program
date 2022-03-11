@@ -39,9 +39,9 @@
 				<text class="text-xl text-bold text-blue text-shadow">今日资讯</text>
 				<text class="text-ABC text-blue">TodayNews</text>
 			</view>
-			<view class="action" @click="goNews">
+			<!-- <view class="action" @click="goNews">
 				<text class="text-lg text-grey text-shadow">更多</text>
-			</view>
+			</view> -->
 		</view>
 
 		<view class="skill-sequence-panel-content-wrapper">
@@ -60,13 +60,19 @@
 		</view>
 		<view class="cu-bar bg-white margin-top-xs">
 			<view class="action sub-title">
-				<text class="text-xl text-bold text-blue text-shadow">老年大学</text>
-				<text class="text-ABC text-blue">UniversityForTheAged</text>
+				<text class="text-xl text-bold text-blue text-shadow">美丽乡村</text>
+				<text class="text-ABC text-blue">BeautifulCountryside</text>
 			</view>
 			<view class="action" @click="goProjectList">
 				<text class="text-lg text-grey text-shadow">更多</text>
 			</view>
 		</view>
+		
+		<uni-grid :column="2" :showBorder="true"  :square="true" :highlight="true">
+			<uni-grid-item v-for="(item,index) in scenery" :key="index">
+				<image :src="item.imgUrl" class="gridImg" @click="goProjectList"></image>
+			</uni-grid-item>
+		</uni-grid>
 
 	</view>
 </template>
@@ -86,7 +92,8 @@
 				},
 				bannerList: [],
 				categories: [],
-				curriculum: []
+				curriculum: [],
+				scenery: []
 			}
 		},
 		watch: {
@@ -101,6 +108,7 @@
 			this.bannerList = result.data.banner
 			this.categories = result.data.categories
 			this.curriculum = result.data.curriculum
+			this.scenery = result.data.scenery
 		},
 		methods: {
 			scroll: function(e) {
@@ -129,7 +137,7 @@
 			},
 			goProjectList() {
 				uni.navigateTo({
-					url: '../me/course'
+					url: '../me/scenic'
 				})
 			},
 			goNews() {
@@ -288,5 +296,12 @@
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 1;
 		overflow: hidden;
+	}
+	
+	.gridImg{
+		width: 340rpx;
+		height: 300rpx;
+		border-radius: 10%;
+		margin: 15rpx;
 	}
 </style>

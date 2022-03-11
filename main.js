@@ -14,6 +14,10 @@ Vue.component('tn-custom', TnCustom);
 // Vue.use(uView);
 
 
+// main.js 文件
+import uView from "uview-ui";
+Vue.use(uView);
+
 
 // <div class="time">{{item.createtime |timeFilter(第二个参数,第三个参数)}} 至 {{item.endtime |timeFilter}}</div>
 
