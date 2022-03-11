@@ -8,11 +8,11 @@
 			
 		}
 	},
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [ //pages数组中第一项表示应用启动页
 		{
 			"path": "pages/index/tabbar",
 			"style": {
-				"navigationBarTitleText": "宅家学IT",
+				"navigationBarTitleText": "coding",
 				"navigationStyle": "custom"
 			}
 		},
@@ -21,17 +21,15 @@
 		{
 			"path": "pages/news/news",
 			"style": {
-				"navigationBarTitleText": "资讯详情"
+				"navigationBarTitleText": "旅游详情"
 			}
 		},
 		{
 			"path": "pages/video",
 			"style": {
-				"navigationBarTitleText": "视频播放",
+				"navigationBarTitleText": "啦啦啦啦",
 				"usingComponents": {
-					// #ifdef  MP-WEIXIN 
 					"txv-video": "plugin://tencentvideo/video"
-					// #endif
 				}
 			}
 		},
