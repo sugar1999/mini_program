@@ -19,6 +19,7 @@
 					<p>{{item.text}}</p>
 				</view>
 			</view>
+			
 			<!-- <u-divider text="分割线"></u-divider> -->
 		</view>
 		<!-- 热门 -->
@@ -90,11 +91,9 @@
 		border-radius: 10rpx;
 		.wrapItem {
 			width: 100%;
-			height: 400rpx;
 			display: flex;
 			flex-direction: row;
 			margin-top: 30rpx;
-
 			.leftImg {
 				.imgCss {
 					width: 250rpx;
@@ -103,14 +102,24 @@
 				}
 			}
 			.content {
-				padding-left: 20rpx;
-				&::first-line{
+				padding: 0 20rpx;
+				&>p:nth-child(1){
 					color: #e45656;
-					font-size: 30rpx;
+					font-size: 32rpx;
 					font-weight: bold;
 				}
+				>p:nth-child(2){
+					text-indent: 2em;
+					width: 100%;
+					font-size: 28rpx;
+					height: 190rpx;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display:-webkit-box;
+					-webkit-box-orient:vertical;
+					-webkit-line-clamp:5;
+				}
 			}
-
 		}
 	}
 </style>
