@@ -5,7 +5,6 @@
 			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
 			"fui-(.*)": "firstui-uni/firstui/fui-$1/fui-$1.vue",
 			"^s-(.*)": "@/uni_modules/s-ui/components/s-$1/s-$1.vue"
-			
 		}
 	},
 	"pages": [ //pages数组中第一项表示应用启动页
@@ -206,6 +205,15 @@
 					}
 				}
 			]
+		},
+		{
+			"root":"page_hot",
+			"pages":[{
+				"path":"hot_index/hot_index",
+				"style":{
+					"navigationStyle":"custom"
+				}
+			}]
 		},
 		{
 			"root": "page_cure",

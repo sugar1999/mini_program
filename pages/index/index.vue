@@ -78,9 +78,6 @@
 </template>
 
 <script>
-	import {
-		selectAllCourses
-	} from '@/apis/education_apis.js'
 	import request from '@/utils/request.js'
 	export default {
 		data() {
@@ -119,7 +116,7 @@
 				// console.log(e.currentTarget.dataset.mid)
 				if (e.currentTarget.dataset.mid == 1) {
 					uni.navigateTo({
-						url: '/page_vote/vote_index/vote_index'
+						url: '/page_hot/hot_index/hot_index'
 					})
 				} else if (e.currentTarget.dataset.mid == 2) {
 					uni.navigateTo({
