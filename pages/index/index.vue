@@ -93,19 +93,14 @@
 				scenery: []
 			}
 		},
-		watch: {
-
-		},
-		onShow() {
-
-		},
 		async mounted() {
 			//后台发请求获取数据
 			let result = await request('/getIndexData')
+			let result2 = await request('/getScenetyData')
 			this.bannerList = result.data.banner
 			this.categories = result.data.categories
 			this.curriculum = result.data.curriculum
-			this.scenery = result.data.scenery
+			this.scenery = result2.data.scenery
 		},
 		methods: {
 			scroll: function(e) {

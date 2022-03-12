@@ -18,10 +18,10 @@
 					<p>{{item.content}}</p>
 					<p>{{item.text}}</p>
 				</view>
-				
+
 			</view>
-			<u-divider text="已经到底了"></u-divider>
 			
+			<u-divider text="已经到底了"></u-divider>
 			
 		</view>
 		<!-- 热门 -->
@@ -59,7 +59,7 @@
 			};
 		},
 		async onLoad() {
-			let result = await request('/getIndexData')
+			let result = await request('/getScenetyData')
 			this.dataList = result.data.scenery
 		},
 		computed: {
@@ -92,11 +92,13 @@
 		flex-direction: column;
 		border-radius: 10rpx;
 		box-shadow: 0rpx 0rpx 40rpx;
+
 		.wrapItem {
 			width: 100%;
 			display: flex;
 			flex-direction: row;
 			margin-top: 30rpx;
+
 			// border: 1rpx solid gray;
 			// border-radius: 5%;
 			.leftImg {
@@ -107,23 +109,26 @@
 					margin-left: 20rpx;
 				}
 			}
+
 			.content {
 				padding: 0 20rpx;
-				&>p:nth-child(1){
+
+				&>p:nth-child(1) {
 					color: #e45656;
 					font-size: 32rpx;
 					font-weight: bold;
 				}
-				>p:nth-child(2){
+
+				>p:nth-child(2) {
 					text-indent: 2em;
 					width: 100%;
 					font-size: 28rpx;
 					height: 190rpx;
 					overflow: hidden;
 					text-overflow: ellipsis;
-					display:-webkit-box;
-					-webkit-box-orient:vertical;
-					-webkit-line-clamp:5;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 5;
 				}
 			}
 		}

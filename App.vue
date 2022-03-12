@@ -32,28 +32,28 @@
 				const res = wx.getSystemInfoSync()
 				var statusbarH = res.statusBarHeight
 				this.$store.commit('getHeight',statusbarH)
-				let tabList =[]
-				this.$http('/addons/ddrive/banner/market_setting').then(data=>{
-					if(data.dj_status==1){
-						tabList.push({
-							name: '代驾',
-							id:0
-						})
-					}
-					if(data.sf_status==1){
-						tabList.push({
-							name: '顺风车',
-							id:1
-						})
-					}
-					if(data.dc_status==1){
-						tabList.push({
-							name: '货运',
-							id:2
-						})
-					}
-					this.$store.commit('getTab',tabList)
-				})
+				// let tabList =[]
+				// this.$http('/addons/ddrive/banner/market_setting').then(data=>{
+				// 	if(data.dj_status==1){
+				// 		tabList.push({
+				// 			name: '代驾',
+				// 			id:0
+				// 		})
+				// 	}
+				// 	if(data.sf_status==1){
+				// 		tabList.push({
+				// 			name: '顺风车',
+				// 			id:1
+				// 		})
+				// 	}
+				// 	if(data.dc_status==1){
+				// 		tabList.push({
+				// 			name: '货运',
+				// 			id:2
+				// 		})
+				// 	}
+				// 	this.$store.commit('getTab',tabList)
+				// })
 			},
 			onShow: function() {
 				console.log('App Show')

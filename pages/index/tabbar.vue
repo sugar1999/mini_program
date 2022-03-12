@@ -21,7 +21,7 @@
 						<image v-if="PageCur=='cases'" src="https://s4.ax1x.com/2022/01/10/7EVbJf.png"></image>
 						<image v-if="PageCur != 'cases'" src="https://s4.ax1x.com/2022/01/10/7EVHFP.png"></image>
 					</view>
-					<view :class="PageCur=='search'?'color_main':'text-gray'">乡村中心</view>
+					<view :class="PageCur=='search'?'color_main':'text-gray'">游玩指导</view>
 				</view>
 
 				<!-- <view @click="NavChange" class="action text-gray add-action" data-cur="cases">
@@ -35,7 +35,7 @@
 						<image v-if="PageCur=='news'" src="https://s4.ax1x.com/2022/01/10/7EVTot.png"></image>
 						<image v-if="PageCur != 'news'" src="https://s4.ax1x.com/2022/01/10/7EVfQe.png"></image>
 					</view>
-					<view :class="PageCur=='news'?'color_main':'text-gray'">政策资讯</view>
+					<view :class="PageCur=='news'?'color_main':'text-gray'">景点资讯</view>
 				</view>
 
 				<view class="action" @click="NavChange" data-cur="me">
@@ -89,7 +89,7 @@
 		// 分享小程序
 		onShareAppMessage(res) {
 			return {
-				title: '学技术·做软件·找案例·寻合作，快来「7he丶Kevin」吧！',
+				title: '分享乡村景点给你的好友吧！',
 			};
 		},
 		onLoad() {
@@ -198,7 +198,7 @@
 				} else if (this.PageCur == 'cases') {
 					// document.title = '宅家学'
 				} else if (this.PageCur == 'news') {
-					// document.title = '文章资讯'
+					// document.title = '景点资讯'
 				} else if (this.PageCur == 'me') {
 					// document.title = '个人中心'
 				}

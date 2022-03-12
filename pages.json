@@ -103,87 +103,87 @@
                 }
             ]
 		},
-		{
-			"root": "page_express",
-			"pages": [{
-				"path": "express_index/express_index",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// {
+		// 	"root": "page_express",
+		// 	"pages": [{
+		// 		"path": "express_index/express_index",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "express_mypackage/express_mypackage",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}, {
+		// 		"path": "express_mypackage/express_mypackage",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "express_door_to_door/express_door_to_door",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}, {
+		// 		"path": "express_door_to_door/express_door_to_door",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "door_appoint/door_appoint",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}, {
+		// 		"path": "door_appoint/door_appoint",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "express_i_want_to_appoint/express_i_want_to_appoint",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}, {
+		// 		"path": "express_i_want_to_appoint/express_i_want_to_appoint",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "door_order_lookup_user/door_order_lookup_user",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}, {
+		// 		"path": "door_order_lookup_user/door_order_lookup_user",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "door_finished/door_finished",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}, {
+		// 		"path": "door_finished/door_finished",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "mypackage_details/mypackage_details",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}, {
+		// 		"path": "mypackage_details/mypackage_details",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "door_appointment_no_order/door_appointment_no_order",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}, {
+		// 		"path": "door_appointment_no_order/door_appointment_no_order",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}]
-		},
-		{
-			"root": "page_repair",
-			"pages": [{
-				"path": "repair_index/repair_index",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}]
+		// },
+		// {
+		// 	"root": "page_repair",
+		// 	"pages": [{
+		// 		"path": "repair_index/repair_index",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "repair_details/repair_details",
-				"style": {
-					"navigationStyle": "custom"
-				}
+		// 	}, {
+		// 		"path": "repair_details/repair_details",
+		// 		"style": {
+		// 			"navigationStyle": "custom"
+		// 		}
 
-			}, {
-				"path": "repair_apply/repair_apply",
-				"style": {
-					"navigationBarTitleText": "",
-					"enablePullDownRefresh": false
-				}
+		// 	}, {
+		// 		"path": "repair_apply/repair_apply",
+		// 		"style": {
+		// 			"navigationBarTitleText": "",
+		// 			"enablePullDownRefresh": false
+		// 		}
 
-			}]
-		},
+		// 	}]
+		// },
 		{
 			"root": "page_vote",
 			"pages": [{

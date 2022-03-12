@@ -7,7 +7,7 @@
 
 		<view class="title-header">
 			<view class="title-text">
-				民 生 服 务
+				游 玩 服 务
 			</view>
 		</view>
 
@@ -20,7 +20,7 @@
 
 		<view class="title-header">
 			<view class="title-text">
-				村 务 党 建
+				游 玩 景 点
 			</view>
 		</view>
 
@@ -51,18 +51,12 @@
 						color: '',
 						url: '/page_cure/cure_index/cure_index'
 					},
-					{
-						title: '报修服务',
-						name: '报修服务',
-						color: '',
-						url: '/page_repair/repair_index/repair_index'
-					},
-					{
-						title: '快递上门服务',
-						name: '快递上门服务',
-						color: '',
-						url: '/page_express/express_door_to_door/express_door_to_door'
-					},
+					// {
+					// 	title: '快递上门服务',
+					// 	name: '快递上门服务',
+					// 	color: '',
+					// 	url: '/page_express/express_door_to_door/express_door_to_door'
+					// },
 					{
 						title: '租房服务',
 						name: '租房服务',
@@ -77,10 +71,10 @@
 					}
 				],
 				gov_affairs_supervise: [{
-						title: '换届选举',
-						name: '换届选举',
+						title: '热门景点',
+						name: '热门景点',
 						color: '',
-						url: '/page_vote/vote_index/vote_index'
+						url: '/page_hot/hot_index/hot_index'
 					}
 				],
 				relaxation: [{
