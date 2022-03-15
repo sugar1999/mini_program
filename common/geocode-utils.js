@@ -16,7 +16,7 @@ function tencentGeocode(lat, lon, callback) {
 	}
 	qqmapsdk.reverseGeocoder({
 		location: location,
-		success(addressRes) {
+		success(addressRes) { 
 			let address = addressRes.result.address
 			callback(address)
 			console.log('腾讯->', address)

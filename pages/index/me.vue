@@ -69,20 +69,13 @@
 
 			<view class="cu-list menu card-menu margin-top-lg margin-bottom-lg shadow-shop bg-white text-black my-radius sm-border">
 
-				<view class="cu-item ">
-					<button class='content cu-btn' open-type="contact">
-						<image src='https://s4.ax1x.com/2022/01/10/7EuBUs.png' class='png' mode='aspectFit'></image>
-						<text class='text-lg margin-sm'>在线客服</text>
-					</button>
-				</view>
-
 				<view class="cu-item" @click="callPhoneNumber" data-number="18629591093">
 					<view class='content'>
 						<image src='https://s4.ax1x.com/2022/01/10/7Eu1UA.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>技术支持</text>
 					</view>
 					<view class="action">
-						<view class="cu-tag round bg-blue light">745 2959 1093</view>
+						<view class="cu-tag round bg-blue light">178 6028 5579</view>
 					</view>
 				</view>
 
@@ -95,7 +88,7 @@
 				<view class="cu-item">
 					<button class='content cu-btn' @click="goAboutMe">
 						<image src='https://s4.ax1x.com/2022/01/10/7EuMHH.png' class='png' mode='aspectFit'></image>
-						<text class='text-lg margin-sm'>关于乡里办</text>
+						<text class='text-lg margin-sm'>关于乡村旅游</text>
 					</button>
 				</view>
 			</view>
@@ -107,63 +100,27 @@
 </template>
 
 <script>
+	import request from '@/utils/request.js'
 	export default {
 		data() {
 			return {
 				spaceShow:true,
 				modalName: null,
 				picName: '流星之夜',
-				pic: [{
-					link: 'http://cdn.zhoukaiwen.com/zjx_me_bg1.jpeg',
-					name: '春天'
-				}, {
-					link: 'http://cdn.zhoukaiwen.com/zjx_me_bg2.jpeg',
-					name: '夏天'
-				}, {
-					link: 'http://cdn.zhoukaiwen.com/zjx_me_bg3.jpeg',
-					name: '秋天'
-				}, {
-					link: 'http://cdn.zhoukaiwen.com/zjx_me_bg4.jpeg',
-					name: '冬天'
-				}, {
-					link: 'http://cdn.zhoukaiwen.com/zjx_me_bg5.jpeg',
-					name: '幽静'
-				}, {
-					link: 'http://cdn.zhoukaiwen.com/zjx_me_bg6.jpg',
-					name: '天空'
-				}],
+				pic: [],
 				topBackGroupImageIndex: 5,
-				inter: [{
-					title: 'mimicry',
-					name: '活力春天',
-					color: ''
-				}, {
-					title: 'theme',
-					name: '清爽夏日',
-					color: ''
-				}, {
-					title: 'theme',
-					name: '金秋之韵',
-					color: ''
-				}, {
-					title: 'theme',
-					name: '冬日之阳',
-					color: ''
-				}, {
-					title: 'theme',
-					name: '幽兰星空',
-					color: ''
-				}, {
-					title: 'theme',
-					name: '流星之夜',
-					color: ''
-				}]
+				inter: []
 			}
+		},
+		async mounted() {
+			let result = await request('/getMeData')
+			this.pic = result.data.pic
+			this.inter = result.data.inter
 		},
 		// 分享小程序
 		onShareAppMessage(res) {
 			return {
-				title: '看看这个小程序多好玩～',
+				title: '将乡村旅游分享给你的好友吧！',
 			};
 		},
 		watch:{
@@ -176,9 +133,6 @@
 				}
 			}
 		},
-		mounted() {
-
-		},
 		methods: {
 			switchImage(index, name) {
 				this.topBackGroupImageIndex = index;
@@ -188,35 +142,16 @@
 			showModal(e) {
 				this.modalName = e.currentTarget.dataset.target
 			},
-
-			// 答题测试
-			mentalTest() {
-				uni.navigateTo({
-					url: '../me/mentalTest/list'
-				})
-			},
 			//拨打固定电话
 			callPhoneNumber() {
 				uni.makePhoneCall({
-					phoneNumber: "18629591093",
+					phoneNumber: "17860285579",
 				});
 			},
-			// 关于作者
+			// 关于
 			goAboutMe() {
 				uni.navigateTo({
 					url: '../me/aboutMe'
-				})
-			},
-			// 薪资排名
-			goSalary() {
-				uni.navigateTo({
-					url: '../me/salary'
-				})
-			},
-			// 课班信息
-			goCourse() {
-				uni.navigateTo({
-					url: '../me/course'
 				})
 			}
 		}
@@ -643,7 +578,6 @@
 		animation: b 1.75s infinite;
 	}
 
-
 	.avatar-eye {
 		position: absolute;
 		top: -10%;
@@ -657,7 +591,6 @@
 		transform: translateX(-50%);
 	}
 
-
 	.avatar-eye--green {
 		background: linear-gradient(to bottom, #fdfdfd, #c3efea);
 	}
@@ -665,7 +598,6 @@
 	.avatar-eye--violet {
 		background: linear-gradient(to bottom, #fdfdfd, #e6d6f6);
 	}
-
 
 	.eye--left {
 		left: 10%;
@@ -692,7 +624,6 @@
 		border-radius: 100%;
 	}
 
-
 	.pupil--green {
 		background: linear-gradient(135deg, rgba(188, 248, 177, 0.7), #2fa38c 75%);
 	}
@@ -700,7 +631,6 @@
 	.pupil--pink {
 		background: linear-gradient(135deg, #f1a183, #8535cd);
 	}
-
 
 	.avatar-eye-pupil-blackThing {
 		position: absolute;
@@ -730,195 +660,61 @@
 
 	/**/
 	@keyframes t {
-
 		0%,
 		10%,
 		80%,
-		100% {
-			top: -30px;
-		}
-
-		20% {
-			top: 0px;
-		}
-
-		30% {
-			top: -20px;
-		}
-
-		40% {
-			top: -0px;
-		}
-
-		50% {
-			top: -25px;
-		}
-
-		70% {
-			top: 0px;
-		}
+		100% {top: -30px;}
+		20% {top: 0px;}
+		30% {top: -20px;}
+		40% {top: -0px;}
+		50% {top: -25px;}
+		70% {top: 0px;}
 	}
-
 	@keyframes b {
-
 		0%,
 		10%,
 		80%,
-		100% {
-			bottom: -30px;
-		}
-
-		20% {
-			bottom: 0px;
-		}
-
-		30% {
-			bottom: -20px;
-		}
-
-		40% {
-			bottom: -0px;
-		}
-
-		50% {
-			bottom: -25px;
-		}
-
-		70% {
-			bottom: 0px;
-		}
+		100% {bottom: -30px;}
+		20% {bottom: 0px;}
+		30% {bottom: -20px;}
+		40% {bottom: -0px;}
+		50% {bottom: -25px;}
+		70% {bottom: 0px;}
 	}
-
 	@keyframes mouth {
-
 		0%,
 		10%,
-		100% {
-			width: 100%;
-			height: 0%;
-		}
-
-		15% {
-			width: 90%;
-			height: 30%;
-		}
-
-		20% {
-			width: 50%;
-			height: 70%;
-		}
-
-		25% {
-			width: 70%;
-			height: 70%;
-		}
-
-		30% {
-			width: 80%;
-			height: 60%;
-		}
-
-		35% {
-			width: 60%;
-			height: 70%;
-		}
-
-		40% {
-			width: 55%;
-			height: 75%;
-		}
-
-		45% {
-			width: 50%;
-			height: 90%;
-		}
-
-		50% {
-			width: 40%;
-			height: 70%;
-		}
-
-		55% {
-			width: 70%;
-			height: 95%;
-		}
-
-		60% {
-			width: 40%;
-			height: 50%;
-		}
-
-		65% {
-			width: 100%;
-			height: 60%;
-		}
-
-		70% {
-			width: 100%;
-			height: 70%;
-		}
-
-		75% {
-			width: 90%;
-			height: 70%;
-		}
-
-		80% {
-			width: 50%;
-			height: 70%;
-		}
-
-		85% {
-			width: 90%;
-			height: 50%;
-		}
-
-		85% {
-			width: 40%;
-			height: 70%;
-		}
-
-		90% {
-			width: 90%;
-			height: 30%;
-		}
-
-		95% {
-			width: 100%;
-			height: 10%;
-		}
+		100% {width: 100%;height: 0%;}
+		15% {width: 90%;height: 30%;}
+		20% {width: 50%;height: 70%;}
+		25% {width: 70%;height: 70%;}
+		30% {width: 80%;height: 60%;}
+		35% {width: 60%;height: 70%;}
+		40% {width: 55%;height: 75%;}
+		45% {width: 50%;height: 90%;}
+		50% {width: 40%;height: 70%;}
+		55% {width: 70%;height: 95%;}
+		60% {width: 40%;height: 50%;}
+		65% {width: 100%;height: 60%;}
+		70% {width: 100%;height: 70%;}
+		75% {width: 90%;height: 70%;}
+		80% {width: 50%;height: 70%;}
+		85% {width: 90%;height: 50%;}
+		85% {width: 40%;height: 70%;}
+		90% {width: 90%;height: 30%;}
+		95% {width: 100%;height: 10%;}
 	}
-
 	@keyframes tongue {
-
 		0%,
 		20%,
-		100% {
-			bottom: -80px;
-		}
-
+		100% {bottom: -80px;}
 		30%,
-		90% {
-			bottom: -40px;
-		}
-
-		40% {
-			bottom: -45px;
-		}
-
-		50% {
-			bottom: -50px;
-		}
-
-		70% {
-			bottom: -80px;
-		}
-
-		90% {
-			bottom: -40px;
-		}
+		90% {bottom: -40px;}
+		40% {bottom: -45px;}
+		50% {bottom: -50px;}
+		70% {bottom: -80px;}
+		90% {bottom: -40px;}
 	}
-
 
 	// 顶部流星
 	.space {

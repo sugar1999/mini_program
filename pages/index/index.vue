@@ -67,8 +67,8 @@
 				<text class="text-lg text-grey text-shadow">更多</text>
 			</view>
 		</view>
-		
-		<uni-grid :column="2" :showBorder="true"  :square="true" :highlight="true">
+
+		<uni-grid :column="2" :showBorder="true" :square="true" :highlight="true">
 			<uni-grid-item v-for="(item,index) in scenery" :key="index">
 				<image :src="item.imgUrl" class="gridImg" @click="goProjectList"></image>
 			</uni-grid-item>
@@ -119,7 +119,7 @@
 					})
 				} else if (e.currentTarget.dataset.mid == 3) {
 					uni.navigateTo({
-						url: '/page_cure/cure_index/cure_index'
+						url: '/page_secure/secure_index/secure_index'
 					})
 				} else if (e.currentTarget.dataset.mid == 4) {
 					uni.navigateTo({
@@ -289,8 +289,8 @@
 		-webkit-line-clamp: 1;
 		overflow: hidden;
 	}
-	
-	.gridImg{
+
+	.gridImg {
 		width: 340rpx;
 		height: 300rpx;
 		border-radius: 10%;

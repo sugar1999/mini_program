@@ -3,14 +3,14 @@
 	<view>
 		<cu-custom bgColor="bg-gradual-blue" :isBack="false">
 			<!-- <block slot="backText">返回</block> -->
-			<block slot="content">文章资讯</block>
+			<block slot="content">景点资讯</block>
 		</cu-custom>
 		<view class="wrap">
 			<view class="u-tabs-box">
 				<u-tabs-swiper activeColor="#0081ff" ref="tabs" :list="list" :current="current" @change="change" :is-scroll="false" swiperWidth="750"></u-tabs-swiper>
 			</view>
 			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
-				<!-- 第一页 村内消息 -->
+				<!-- 第一页 景点消息 -->
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
@@ -70,7 +70,7 @@
 						</view>
 					</scroll-view>
 				</swiper-item>
-				<!-- 第三页 娱乐新闻 -->
+				<!-- 第三页 待定 -->
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
@@ -100,7 +100,7 @@
 						</view>
 					</scroll-view>
 				</swiper-item>
-				<!-- 第四页 建档百年 -->
+				<!-- 第四页 待定 -->
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
@@ -136,127 +136,27 @@
 </template>
 
 <script>
-	import {
-		selectInformationByType
-	} from '@/apis/news_apis.js'
+	import request from '@/utils/request.js'
 	export default {
-		mounted() {
-			let data1 = {
-				type: '村内消息'
-			}
-			selectInformationByType(data1).then((res) => {
-				if (res.statusCode == "200")
-				{
-					this.dataList1= res.data
-					console.log('newsList',res.data);
-					uni.hideLoading();
-				}
-				else
-				{
-					uni.hideLoading();
-					uni.showToast({
-					title: '获取失败',
-					duration: 2000,
-					icon: 'error'
-					});
-				}
-			})
-			
-			let data2 = {
-				type: '疫情'
-			}
-			selectInformationByType(data2).then((res) => {
-				if (res.statusCode == "200")
-				{
-					this.dataList2= res.data
-					console.log('newsList',res.data);
-					uni.hideLoading();
-				}
-				else
-				{
-					uni.hideLoading();
-					uni.showToast({
-					title: '获取失败',
-					duration: 2000,
-					icon: 'error'
-					});
-				}
-			})
-			
-			let data3 = {
-				type: '娱乐新闻'
-			}
-			selectInformationByType(data3).then((res) => {
-				if (res.statusCode == "200")
-				{
-					this.dataList3= res.data
-					console.log('newsList',res.data);
-					uni.hideLoading();
-				}
-				else
-				{
-					uni.hideLoading();
-					uni.showToast({
-					title: '获取失败',
-					duration: 2000,
-					icon: 'error'
-					});
-				}
-			})
-			
-			let data4 = {
-				type: '建档百年'
-			}
-			selectInformationByType(data4).then((res) => {
-				if (res.statusCode == "200")
-				{
-					this.dataList4= res.data
-					console.log('newsList',res.data);
-					uni.hideLoading();
-				}
-				else
-				{
-					uni.hideLoading();
-					uni.showToast({
-					title: '获取失败',
-					duration: 2000,
-					icon: 'error'
-					});
-				}
-			})
-		},
 		data() {
 			return {
-				dataList1: [
-					{
-					informationid: '1',
-					message: '这里是资讯',
-					title: '这里是标题',
-					time: '这里是时间',
-					authorName: '这里是作者名',
-					img: 'http://p1362.bvimg.com/10465/a781899b01a1af31.png'
-					}
-				],
+				dataList1: [],
 				dataList2: [],
 				dataList3: [],
 				dataList4: [],
-				list: [
-					{
-						name: '村内消息'
-					},
-					{
-						name: '疫情'
-					},
-					{
-						name: '娱乐新闻'
-					},
-					{
-						name: '建党百年'
-					}
-				],
+				list: [],
 				current: 0,
 				swiperCurrent: 0,
 			};
+		},
+		async mounted() {
+			let result = await request('/getNewsData')
+			const data = result.data
+			this.dataList1 = data.dataList1
+			this.dataList2 = data.dataList2
+			this.dataList3 = data.dataList3
+			this.dataList4 = data.dataList4
+			this.list = data.list
 		},
 		methods: {
 			goClass(){

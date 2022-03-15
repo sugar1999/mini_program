@@ -87,26 +87,24 @@
 	.wrap {
 		margin: auto;
 		width: 90%;
-		// background-color: #ecf5ff;
 		display: flex;
 		flex-direction: column;
 		border-radius: 10rpx;
-		box-shadow: 0rpx 0rpx 40rpx;
 
 		.wrapItem {
 			width: 100%;
 			display: flex;
 			flex-direction: row;
 			margin-top: 30rpx;
+			box-shadow: 0rpx 0rpx 90rpx 0rpx rgba(0, 0, 0, 0.1);
+			border-radius: 12rpx;
 
-			// border: 1rpx solid gray;
-			// border-radius: 5%;
 			.leftImg {
 				.imgCss {
 					width: 250rpx;
 					height: 250rpx;
 					border-radius: 5%;
-					margin-left: 20rpx;
+					// margin-left: 20rpx;
 				}
 			}
 
@@ -117,6 +115,7 @@
 					color: #e45656;
 					font-size: 32rpx;
 					font-weight: bold;
+					margin-top: 10rpx;
 				}
 
 				>p:nth-child(2) {

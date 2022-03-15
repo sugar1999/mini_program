@@ -25,7 +25,7 @@
 							</image>
 						</view>
 						<view class="album__content">
-							<u--text text="uView UI" type="primary" bold size="17"></u--text>
+							<u--text :text="item.name" type="primary" bold size="17"></u--text>
 							<u--text margin="0 0 8px 0" :text="item.content"></u--text>
 							<u-album :urls="item.urls"></u-album>
 						</view>
@@ -46,11 +46,11 @@
 				urls: []
 			}
 		},
-		async onLoad() {
+		async mounted() {
 			let result = await request('/getPageHotData')
 			this.urls = result.data.hot
 		},
-		methods: {
+		 methods: {
 			open(e) {},
 			close(e) {},
 			change(e) {}

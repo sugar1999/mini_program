@@ -30,7 +30,6 @@
 				old: {
 					scrollTop: 0
 				},
-				getData: [],
 
 				detailsId: '',
 				
@@ -49,25 +48,8 @@
 			this.getDataFun();
 		},
 		methods: {
-			onShareAppMessage(res) {
-				return {
-					title: '轻松一课，来看看吧～',
-				}
-			},
-			getDataFun() {
-				this.getData = {
-					title: '来，一起手撕32个大厂高频面试编程题',
-					createTime: '2020年11月03日',
-					url: 'http://cdn.zhoukaiwen.com/5a97516eada18453046c61a263f41ef9.jpg',
-					content: "来，一起手撕32个大厂高频面试编程题，来，一起手撕32个大厂高频面试编程题，来，一起手撕32个大厂高频面试编程题。",
-				};
-			},
-			upper: function(e) {
-				console.log(e)
-			},
-			lower: function(e) {
-				console.log(e)
-			},
+			
+			
 			scroll: function(e) {
 				console.log(e)
 				this.old.scrollTop = e.detail.scrollTop
@@ -77,10 +59,7 @@
 				this.$nextTick(function() {
 					this.scrollTop = 0
 				});
-				uni.showToast({
-					icon: "none",
-					title: "纵向滚动 scrollTop 值已被修改为 0"
-				})
+				
 			},
 			// 评论
 			send_btn(){

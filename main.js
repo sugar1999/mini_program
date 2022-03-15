@@ -9,11 +9,9 @@ Vue.component('tn-custom', TnCustom);
 // 时间格式过滤器
 // import './common/filter.js';//过滤器配置
 
+
+
 // 引入:uView
-// import uView from 'uview-ui';
-// Vue.use(uView);
-
-
 // main.js 文件
 import uView from "uview-ui";
 Vue.use(uView);
