@@ -27,7 +27,7 @@
 			<view class="cu-item" v-for="(item,index) in categories" :key="index"
 				:style="[{animation: 'show ' + ((index+1)*0.2+1) + 's 1'}]" @click="goCategorieslist"
 				:data-mid="item.mid">
-				<view :class="['cuIcon-' + item.cuIcon,'text-' + item.color]">
+				<view :class="['icon-' + item.cuIcon,'text-' + item.color]">
 				</view>
 				<text>{{item.name}}</text>
 			</view>
