@@ -20,7 +20,7 @@
 	export default {
 		data() {
 			return {
-				informationid: '',
+				// informationid: '',
 				message: '',
 				title: '',
 				time: '',
@@ -30,26 +30,18 @@
 				old: {
 					scrollTop: 0
 				},
-
-				detailsId: '',
-				
-				comment_input:'',	//评论内容
-				praiseType: 0, //1点赞  2取消点赞
 			}
 		},
 		onLoad(option) {
-			this.detailsId = option.detailsId;
-			this.informationid = option.informationid;
+			// this.detailsId = option.detailsId;
+			// this.informationid = option.informationid;
 			this.message = option.message;
 			this.title = option.title;
 			this.time = option.time;
-			this.authorName = option.authorName;
+			// this.authorName = option.authorName;
 			this.img = option.img;
-			this.getDataFun();
 		},
 		methods: {
-			
-			
 			scroll: function(e) {
 				console.log(e)
 				this.old.scrollTop = e.detail.scrollTop
@@ -59,89 +51,17 @@
 				this.$nextTick(function() {
 					this.scrollTop = 0
 				});
-				
 			},
-			// 评论
-			send_btn(){
-				// console.log(this.comment_input);
-				let optsList = {
-					url: 'south/southEasyLessonEvaluate/xcx/evaluate',
-					method: 'post'
-				};
-				let paramsList = {
-					articleId: this.detailsId,
-					describ: this.comment_input, 
-				};
-				request.httpTokenRequest(optsList, paramsList).then(res => {
-					if (res.data.code === 200) {
-						console.log(res.data);
-						this.comment_input = '';
-						this.getDataFun();
-					}
-				});
-			},
-			// 点赞
-			praiseClick() {
-				uni.showToast({
-					title: '感谢参与',
-					duration: 2000
-				});
-				if (this.praiseType == 1) {
-					this.praiseType = 2;
-				} else if (this.praiseType == 2) {
-					this.praiseType = 1;
-				} else {
-					this.praiseType = 1;
-				}
-
-				// 提交点赞数据
-				let opts = {
-					url: `south/southEasyLesson/xcx/${this.detailsId}/type/${this.praiseType}`,
-					method: 'post'
-				};
-				request.httpTokenRequest(opts).then(res => {
-					console.log(res)
-					if (res.data.code == 200) {
-						this.getDataFun();
-					}
-				});
-
-				console.log(this.detailsId);
-				console.log(this.praiseType);
-			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	button::after {
-		border: none;
-		background: transparent;
-	}
-
-	uni-button {
-		background: transparent;
-	}
-
 	.container {
 		background-color: #f2f2f2;
 		width: 750rpx;
-
 	}
-
-	.solid {
-		border-radius: 50rpx;
-		text-indent: 12rpx;
-	}
-
 	image {
 		width: 750rpx;
-	}
-
-	.bottomBox {
-		width: 750rpx;
-		position: fixed;
-		left: 0;
-		bottom: 0rpx;
 	}
 </style>

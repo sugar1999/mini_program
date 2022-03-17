@@ -27,7 +27,7 @@
 			<view class="cu-item" v-for="(item,index) in categories" :key="index"
 				:style="[{animation: 'show ' + ((index+1)*0.2+1) + 's 1'}]" @click="goCategorieslist"
 				:data-mid="item.mid">
-				<view :class="['icon-' + item.cuIcon,'text-' + item.color]">
+				<view :class="['iconfont','icon-' + item.cuIcon,'text-' + item.color]" style="font-size: 50rpx;">
 				</view>
 				<text>{{item.name}}</text>
 			</view>
@@ -197,7 +197,7 @@
 	.nav-li {
 		padding: 40rpx 30rpx;
 		width: 100%;
-		background-image: url(https://s1.ax1x.com/2020/06/27/NyU04x.png);
+		background-image: url(https://s1.ax1x.com/2022/03/17/qCS70s.png);
 		background-size: cover;
 		background-position: center;
 		position: relative;

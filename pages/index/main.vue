@@ -1,7 +1,7 @@
 <template>
 	<view class="components-home">
 		<view style="margin-top:-250rpx;height: 486rpx;">
-			<image src='https://s1.ax1x.com/2020/09/16/wccQQP.png' mode='widthFix' class='png'
+			<image src='https://s1.ax1x.com/2022/03/17/qCpgu4.png' mode='widthFix' class='png'
 				style='width:100%;height:100rpx'></image>
 		</view>
 
@@ -65,7 +65,7 @@
 		border-radius: 12upx;
 		width: 45%;
 		margin: 0 2.5% 40upx;
-		background-image: url(https://s1.ax1x.com/2020/06/27/NyU04x.png);
+		background-image: url(https://s1.ax1x.com/2022/03/17/qCS70s.png);
 		background-size: cover;
 		background-position: center;
 		position: relative;
@@ -175,7 +175,7 @@
 		justify-content: center;
 		/* padding: 40rpx 0 0 0; */
 		font-weight: bold;
-		background-image: url(https://s1.ax1x.com/2020/09/16/wccswF.png);
+		background-image: url(https://s1.ax1x.com/2022/03/17/qCpYjg.png);
 		background-size: cover;
 	}
 

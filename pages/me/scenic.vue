@@ -62,9 +62,6 @@
 			let result = await request('/getScenetyData')
 			this.dataList = result.data.scenery
 		},
-		computed: {
-
-		},
 		methods: {
 			click(item) {
 				this.currentPageId = item.index

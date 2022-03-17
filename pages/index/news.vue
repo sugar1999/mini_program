@@ -2,7 +2,7 @@
 <template>
 	<view>
 		<cu-custom bgColor="bg-gradual-blue" :isBack="false">
-			<!-- <block slot="backText">返回</block> -->
+			<block slot="backText">返回</block>
 			<block slot="content">景点资讯</block>
 		</cu-custom>
 		<view class="wrap">
@@ -29,7 +29,7 @@
 													<view class="text-gray light sm round fl">{{res.time}}</view>
 													<view class="text-gray light sm round fr">
 														<text class="text-gray cuIcon-mark" style="font-size: 34rpx;"></text>
-														<text>11</text>
+														<text>{{res.CommentCount}}</text>
 													</view>
 												</view>
 											</view>
@@ -59,7 +59,7 @@
 													<view class="text-gray light sm round fl">{{res.time}}</view>
 													<view class="text-gray light sm round fr">
 														<text class="text-gray cuIcon-mark" style="font-size: 34rpx;"></text>
-														<text>11</text>
+														<text>{{res.CommentCount}}</text>
 													</view>
 												</view>
 											</view>
@@ -89,7 +89,7 @@
 													<view class="text-gray light sm round fl">{{res.time}}</view>
 													<view class="text-gray light sm round fr">
 														<text class="text-gray cuIcon-mark" style="font-size: 34rpx;"></text>
-														<text>11</text>
+														<text>{{res.CommentCount}}</text>
 													</view>
 												</view>
 											</view>
@@ -119,7 +119,7 @@
 													<view class="text-gray light sm round fl">{{res.time}}</view>
 													<view class="text-gray light sm round fr">
 														<text class="text-gray cuIcon-mark" style="font-size: 34rpx;"></text>
-														<text>11</text>
+														<text>{{res.CommentCount}}</text>
 													</view>
 												</view>
 											</view>
@@ -159,13 +159,6 @@
 			this.list = data.list
 		},
 		methods: {
-			goClass(){
-				uni.showToast({
-					title: '没有权限～',
-					duration: 2000,
-					icon: 'none'
-				});
-			},
 			reachBottom() {
 				// 此tab为空数据
 				if(this.current != 2) {

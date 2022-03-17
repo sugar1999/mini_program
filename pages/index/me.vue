@@ -4,7 +4,7 @@
 		<!-- 弹窗确认 -->
 		<view class="cu-modal" :class="modalName=='Modal'?'show':''">
 			<view class="cu-dialog">
-				<view class="modal_bg"></view>
+				<!-- <view class="modal_bg"></view> -->
 				<view class="modal_main">
 					<view class='nav-list margin-top'>
 						<view :class="'nav-li bg-zt' + (index+1)" v-for="(item, index) in inter" :key="index" @click="switchImage(index,item.name)">
@@ -61,7 +61,7 @@
 				
 				<view class="cu-item">
 					<button class='content cu-btn' open-type="share">
-						<image src='https://s4.ax1x.com/2022/01/10/7EuaDg.png' class='png' mode='aspectFit'></image>
+						<image src='https://s1.ax1x.com/2022/03/17/q988tP.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>分享小程序</text>
 					</button>
 				</view>
@@ -71,7 +71,7 @@
 
 				<view class="cu-item" @click="callPhoneNumber" data-number="18629591093">
 					<view class='content'>
-						<image src='https://s4.ax1x.com/2022/01/10/7Eu1UA.png' class='png' mode='aspectFit'></image>
+						<image src='https://s1.ax1x.com/2022/03/17/q9879K.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>技术支持</text>
 					</view>
 					<view class="action">
@@ -81,13 +81,13 @@
 
 				<view class="cu-item">
 					<button class='content cu-btn' open-type="feedback">
-						<image src='https://s4.ax1x.com/2022/01/10/7EuYgf.png' class='png' mode='aspectFit'></image>
+						<image src='https://s1.ax1x.com/2022/03/17/q9NkR0.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>问题反馈</text>
 					</button>
 				</view>
 				<view class="cu-item">
 					<button class='content cu-btn' @click="goAboutMe">
-						<image src='https://s4.ax1x.com/2022/01/10/7EuMHH.png' class='png' mode='aspectFit'></image>
+						<image src='https://s1.ax1x.com/2022/03/17/q9NolV.png' class='png' mode='aspectFit'></image>
 						<text class='text-lg margin-sm'>关于乡村旅游</text>
 					</button>
 				</view>
@@ -142,7 +142,7 @@
 			showModal(e) {
 				this.modalName = e.currentTarget.dataset.target
 			},
-			//拨打固定电话
+			//拨打电话
 			callPhoneNumber() {
 				uni.makePhoneCall({
 					phoneNumber: "17860285579",
@@ -322,18 +322,18 @@
 	.cu-dialog {
 		background: #FFFFFF;
 		overflow: visible;
-		padding: 300rpx 0 70rpx;
+		padding: 100rpx 0 70rpx;
 	}
 
-	.modal_bg {
-		width: 100%;
-		height: 400rpx;
-		position: absolute;
-		top: -100rpx;
-		background-image: url(http://cdn.zhoukaiwen.com/modal_bg.png);
-		background-size: 100%;
-		background-repeat: no-repeat;
-	}
+	// .modal_bg {
+	// 	width: 100%;
+	// 	// height: 100rpx;
+	// 	// position: absolute;
+	// 	// top: -100rpx;
+	// 	// background-image: url(http://cdn.zhoukaiwen.com/modal_bg.png);
+	// 	// background-size: 100%;
+	// 	// background-repeat: no-repeat;
+	// }
 
 	.modal_main {
 		background-color: #FFFFFF;
@@ -382,7 +382,7 @@
 		border-radius: 12upx;
 		width: 45%;
 		margin: 0 2.5% 40upx;
-		background-image: url(http://p1362.bvimg.com/10465/5a4bb5366ef48c77.png);
+		background-image: url(https://s1.ax1x.com/2022/03/17/qCS70s.png);
 		background-size: cover;
 		background-position: center;
 		position: relative;
@@ -599,18 +599,9 @@
 		background: linear-gradient(to bottom, #fdfdfd, #e6d6f6);
 	}
 
-	.eye--left {
-		left: 10%;
-	}
-
-	.eye--right {
-		left: 85%;
-	}
-
-	.eye--center {
-		left: 45%;
-		top: 10%;
-	}
+	.eye--left {left: 10%;}
+	.eye--right {left: 85%;}
+	.eye--center {left: 45%;top: 10%;}
 
 	.avatar-eye-pupil {
 		position: absolute;

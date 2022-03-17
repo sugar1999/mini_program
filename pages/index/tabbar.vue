@@ -3,6 +3,7 @@
 		<index v-if="PageCur=='index'"></index>
 		<cases v-if="PageCur=='cases'"></cases>
 		<news v-if="PageCur=='news'"></news>
+		<buy v-if="PageCur=='buy'"></buy>
 		<me v-if="PageCur=='me'"></me>
 
 		<view class="box">
@@ -31,6 +32,16 @@
 					</view>
 					<view :class="PageCur=='news'?'color_main':'text-gray'">景点资讯</view>
 				</view>
+				
+				<view class="action" @click="NavChange" data-cur="buy">
+					<view class='cuIcon-cu-image'>
+						<!-- <view class="cu-tag badge">{{message}}</view> -->
+						<image v-if="PageCur=='buy'" src="https://s1.ax1x.com/2022/03/17/q9lUX9.png"></image>
+						<image v-if="PageCur != 'buy'" src="https://s1.ax1x.com/2022/03/17/q9QNZt.png"></image>
+						
+					</view>
+					<view :class="PageCur=='buy'?'color_main':'text-gray'">旅游商城</view>
+				</view>
 
 				<view class="action" @click="NavChange" data-cur="me">
 					<view class='cuIcon-cu-image'>
@@ -52,12 +63,14 @@
 	import index from "./index.vue";
 	import cases from "./main.vue";
 	import news from "./news.vue";
+	import buy from './buy.vue'
 	import me from "./me.vue";
 	export default {
 		components: {
 			index,
 			cases,
 			news,
+			buy,
 			me
 		},
 		data() {
@@ -66,14 +79,9 @@
 				message: '2',
 				openId: '',
 				access_token: '',
-
 				tip: "我是提示",
 				duration: 1
-
 			};
-		},
-		created() {
-
 		},
 		// 分享小程序
 		onShareAppMessage(res) {
@@ -163,8 +171,7 @@
 				})
 			},
 			NavChange: function(e) {
-				console.log(e.currentTarget.dataset.cur)
-
+				// console.log(e.currentTarget.dataset.cur)
 				this.PageCur = e.currentTarget.dataset.cur;
 			},
 			NavChange_xd: function() {
