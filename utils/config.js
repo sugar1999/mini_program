@@ -1,5 +1,5 @@
-const localHost = 'http://localhost:3002'
+const localHost = 'http://localhost:5210'
 const httpHost = 'http://e282776e40.zicp.vip'
 export default {
-	host: httpHost
+	host: localHost
 }
