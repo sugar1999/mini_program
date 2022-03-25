@@ -1,9 +1,10 @@
 <template>
 	<view>
 		<index v-if="PageCur=='index'"></index>
-		<cases v-if="PageCur=='cases'"></cases>
+		<!-- <cases v-if="PageCur=='cases'"></cases> -->
 		<news v-if="PageCur=='news'"></news>
 		<buy v-if="PageCur=='buy'"></buy>
+		<cart v-if="PageCur=='cart'"></cart>
 		<me v-if="PageCur=='me'"></me>
 
 		<view class="box">
@@ -16,13 +17,13 @@
 					<view :class="PageCur=='index'?'color_main':'text-gray'">首页</view>
 				</view>
 
-				<view class="action" @click="NavChange" data-cur="cases">
+				<!-- <view class="action" @click="NavChange" data-cur="cases">
 					<view class='cuIcon-cu-image'>
 						<image v-if="PageCur=='cases'" src="https://s4.ax1x.com/2022/01/10/7EVbJf.png"></image>
 						<image v-if="PageCur != 'cases'" src="https://s4.ax1x.com/2022/01/10/7EVHFP.png"></image>
 					</view>
 					<view :class="PageCur=='cases'?'color_main':'text-gray'">游玩指导</view>
-				</view>
+				</view> -->
 
 				<view class="action" @click="NavChange" data-cur="news">
 					<view class='cuIcon-cu-image'>
@@ -41,6 +42,15 @@
 						
 					</view>
 					<view :class="PageCur=='buy'?'color_main':'text-gray'">旅游商城</view>
+				</view>
+				
+				<view class="action" @click="NavChange" data-cur="cart">
+					<view class='cuIcon-cu-image'>
+						<image v-if="PageCur=='cart'" src="https://s1.ax1x.com/2022/03/17/q9lUX9.png"></image>
+						<image v-if="PageCur != 'cart'" src="https://s1.ax1x.com/2022/03/17/q9QNZt.png"></image>
+						
+					</view>
+					<view :class="PageCur=='cart'?'color_main':'text-gray'">购物车</view>
 				</view>
 
 				<view class="action" @click="NavChange" data-cur="me">
@@ -61,16 +71,18 @@
 
 <script>
 	import index from "./index.vue";
-	import cases from "./main.vue";
+	// import cases from "./main.vue";
 	import news from "./news.vue";
 	import buy from './buy.vue'
+	import cart from './cart.vue'
 	import me from "./me.vue";
 	export default {
 		components: {
 			index,
-			cases,
+			// cases,
 			news,
 			buy,
+			cart,
 			me
 		},
 		data() {

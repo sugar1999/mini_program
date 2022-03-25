@@ -11,7 +11,7 @@
 		{
 			"path": "pages/index/tabbar",
 			"style": {
-				"navigationBarTitleText": "coding",
+				"navigationBarTitleText": "",
 				"navigationStyle": "custom"
 			}
 		},
@@ -20,15 +20,30 @@
 			"style": {
 				"navigationBarTitleText": "旅游详情"
 			}
+		},
+		{
+			"path": "pages/index/detail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"navigationStyle":"custom"
+			}
 		}
 	],
 
 	"subPackages": [
-
 		{
 			"root": "page_hot",
 			"pages": [{
 				"path": "hot_index/hot_index",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			}]
+		},
+		{
+			"root": "page_guidance",
+			"pages": [{
+				"path": "guidance_index/index",
 				"style": {
 					"navigationStyle": "custom"
 				}

@@ -28,7 +28,7 @@
 				<scroll-view scroll-y="true" class="scrollContainer">
 					<view class="proList">
 						<image class="cateImg" :src="categoryObj.imgUrl" mode=""></image>
-						<view  class='proItem' v-for='(item, index) in categoryObj.subCateList' :key='index'>
+						<view  class='proItem' v-for='(item, index) in categoryObj.subCateList' :key='index' @click="toDetail(item)">
 							<view class="imgCss">
 								<image :src="item.wapBannerUrl" mode=""></image>
 							</view>
@@ -60,6 +60,12 @@
 		methods:{
 			changeNavIndex(navIndex){
 				this.navIndex = navIndex
+			},
+			toDetail(shopItem) {
+				console.log(JSON.stringify(shopItem))
+				uni.navigateTo({
+					url:'./detail?shopItem='+JSON.stringify(shopItem)
+				})
 			}
 		},
 		computed: {

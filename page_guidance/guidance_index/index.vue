@@ -1,5 +1,9 @@
 <template>
 	<view class="components-home">
+		<cu-custom bgColor="bg-gradual-blue" :isBack="false">
+			<block slot="backText">返回</block>
+			<block slot="content">景点资讯</block>
+		</cu-custom>
 		<view style="margin-top:-250rpx;height: 486rpx;">
 			<image src='https://s1.ax1x.com/2022/03/17/qCpgu4.png' mode='widthFix' class='png'
 				style='width:100%;height:100rpx'></image>

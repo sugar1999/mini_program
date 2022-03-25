@@ -115,16 +115,16 @@
 					})
 				} else if (e.currentTarget.dataset.mid == 2) {
 					uni.navigateTo({
-						url: '/page_express/express_door_to_door/express_door_to_door'
+						url: ''
 					})
 				} else if (e.currentTarget.dataset.mid == 3) {
 					uni.navigateTo({
 						url: '/page_secure/secure_index/secure_index'
 					})
 				} else if (e.currentTarget.dataset.mid == 4) {
-					uni.navigateTo({
-						url: '/page_repair/repair_index/repair_index'
-					})
+					// uni.navigateTo({
+					// 	url: '/page_guidance/guidance_index/index'
+					// })
 				}
 			},
 			goProjectList() {
