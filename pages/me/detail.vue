@@ -1,16 +1,13 @@
 <template>
 	<view class="detailContainer">
-		<cu-custom bgColor="bg-gradual-blue" :isBack="false">
+		<!-- <cu-custom bgColor="bg-gradual-blue" :isBack="false">
 			<block slot="backText">返回</block>
 			<block slot="content">旅游购物</block>
-		</cu-custom>
-		<view class="header">
-			<icon class="iconfont icon-shouye2"></icon>
+		</cu-custom> -->
+		<view class="header" @click="goBefore()">
+			<icon class="iconfont icon-weibiaoti-- iconSize"></icon>
+			<span>返回</span>
 			<text> 乡游购 </text>
-			<view class="shopCart" @click="toShopCart">
-				<icon class="iconfont icon-gouwuche"></icon>
-				<text class="count" v-if="cartList.length">{{cartList.length}}</text>
-			</view>
 		</view>
 		
 		<!-- 内容区 -->
@@ -18,6 +15,7 @@
 			<image class="detailImg" :src="shopDetail.wapBannerUrl" mode=""></image>
 			<view class="tag">{{shopDetail.promTag}}</view>
 			<text class="price">￥ {{shopDetail.retailPrice}}</text>
+			<text>/{{ shopDetail.weight }}</text>
 			<view class="info">{{shopDetail.frontDesc}}</view>
 			
 			
@@ -29,8 +27,14 @@
 		
 		<!-- 底部导航 -->
 		<view class="detailFooter">
-			<image class="service" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/detail-kefu-d10f0489d2.png?imageView&type=webp" mode=""></image>
-			<view class="btn buyNow">立即购买</view>
+			<view class="shopCart" @click="toShopCart">
+				<icon class="iconfont icon-gouwuche iconGouwuche"></icon>
+				<view class="box" v-if="cartList.length!==0">
+					<u-badge numberType="ellipsis" :type="type " max="99" :value="cartValue" bgColor="red" color="white" showZero></u-badge>
+				</view>
+				<!-- <text class="count" v-if="cartList.length">{{cartList.length}}</text> -->
+			</view>
+			<view class="btn buyNow" @click="purchase()">立即购买</view>
 			<view @click="addShopCart(shopDetail)" class="btn addShopCart">加入购物车</view>
 		</view>
 	</view>
@@ -41,7 +45,8 @@
 	export default {
 		data() {
 			return {
-				shopDetail: {}
+				shopDetail: {},
+				type: 'warning'
 			}
 		},
 		onLoad(option) {
@@ -50,7 +55,9 @@
 		},
 		computed: {
 			...mapState({
-				cartList: state => state.cart.cartList
+				cartList: state => state.cart.cartList,
+				cartValue: start => start.cart.cartList.length
+				// cartValue: 100
 			})
 		},
 		methods: {
@@ -61,11 +68,15 @@
 			addShopCart(shopItem){
 				this.changeCartList(shopItem)
 			},
+			//购买
+			purchase() {
+				this.show = true
+			},
 			// 跳转至购物车
 			toShopCart(){
 				console.log('跳转。。。');
-				wx.switchTab({
-					url: './cart'
+				wx.navigateTo({
+					url: '../index/tabbar?PageCur=cart'
 				})
 			},
 			//返回上一级页面
@@ -84,25 +95,31 @@
 		display flex
 		flex-direction column
 		.header
-			height 90upx
+			height 130upx
 			line-height 90upx
 			background #FFFFFF
 			display flex
 			text-align center
+			padding-top 40upx
+			background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+			color: #ffffff;
+			position relative
+			// text
+			// 	font-size 32upx
+			.iconSize
+				font-size 36upx !important
 			.iconfont
 				width 90upx
 				height 90upx
 				font-size 50upx
+			span
+				position absolute
+				left 65upx
+				font-size 30upx
 			text
 				flex 1
-			.shopCart
-				position relative
-				.count
-					color red
-					position absolute
-					top -25upx
-					right 5upx
-					font-size 26upx
+				font-size 32upx
+			
 		.content
 			height calc(100vh - 190upx)
 			.detailImg
@@ -136,6 +153,28 @@
 			border-top 1upx solid #EEEEEE
 			display flex
 			background #fff
+			.shopCart
+				width 140upx
+				height 100upx
+				position relative
+				.box
+					// width: 35upx; 
+					height: 35upx;
+					position absolute
+					left 95upx
+					top 5upx
+				.iconGouwuche{
+					font-size 50upx !important
+					position absolute
+					left 45upx
+					top 0upx
+				}
+				.count
+					color #FFFFFF
+					position absolute
+					top -28upx
+					right 22upx
+					font-size 26upx
 			.service
 				width 60upx
 				height 60upx

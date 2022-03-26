@@ -64,7 +64,7 @@
 			toDetail(shopItem) {
 				console.log(JSON.stringify(shopItem))
 				uni.navigateTo({
-					url:'./detail?shopItem='+JSON.stringify(shopItem)
+					url:'../me/detail?shopItem='+JSON.stringify(shopItem)
 				})
 			}
 		},

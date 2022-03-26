@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3248640 */
-  src: url('//at.alicdn.com/t/font_3248640_bj3t00vym4p.woff2?t=1648196355612') format('woff2'),
-       url('//at.alicdn.com/t/font_3248640_bj3t00vym4p.woff?t=1648196355612') format('woff'),
-       url('//at.alicdn.com/t/font_3248640_bj3t00vym4p.ttf?t=1648196355612') format('truetype');
+  src: url('//at.alicdn.com/t/font_3248640_3p60rwmwjrl.woff2?t=1648280142697') format('woff2'),
+       url('//at.alicdn.com/t/font_3248640_3p60rwmwjrl.woff?t=1648280142697') format('woff'),
+       url('//at.alicdn.com/t/font_3248640_3p60rwmwjrl.ttf?t=1648280142697') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weibiaoti--:before {
+  content: "\e60e";
 }
 
 .icon-gouwuche:before {

@@ -74,7 +74,7 @@
 	// import cases from "./main.vue";
 	import news from "./news.vue";
 	import buy from './buy.vue'
-	import cart from './cart.vue'
+	import cart from '../cart/cart.vue'
 	import me from "./me.vue";
 	export default {
 		components: {
@@ -101,7 +101,9 @@
 				title: '分享乡村景点给你的好友吧！',
 			};
 		},
-		onLoad() {
+		onLoad(option) {
+			option.PageCur ? this.PageCur = option.PageCur : ''
+			// console.log(option.PageCur)
 			let that = this;
 			//判断缓存中是否有用户数据，没有则获取
 			if (!uni.getStorageSync('encryptedData')) {

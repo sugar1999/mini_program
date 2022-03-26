@@ -20,13 +20,6 @@
 			"style": {
 				"navigationBarTitleText": "旅游详情"
 			}
-		},
-		{
-			"path": "pages/index/detail",
-			"style": {
-				"navigationBarTitleText": "商品详情",
-				"navigationStyle":"custom"
-			}
 		}
 	],
 
@@ -83,6 +76,13 @@
 					"style": {
 						"navigationBarTitleText": "旅游景点",
 						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path":"detail",
+					"style":{
+						"navigationBarTitleText": "购物详情",
+						"navigationStyle":"custom"
 					}
 				}
 			]
