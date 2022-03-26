@@ -66,6 +66,14 @@
 					</button>
 				</view>
 			</view>
+			<view class="cu-list menu card-menu margin-top-lg margin-bottom-sm shadow-shop bg-white text-black my-radius sm-border">
+				<view class="buyContainer">
+					<view class="buyItem" v-for="(item, index) in buyList" :key="index">
+						<span :class="['iconfont','icon-' + item.icon]" :style="{'color': item.color}"></span>
+						<view class="butText">{{item.name}}</view>
+					</view>
+				</view>
+			</view>
 
 			<view class="cu-list menu card-menu margin-top-lg margin-bottom-lg shadow-shop bg-white text-black my-radius sm-border">
 
@@ -109,7 +117,29 @@
 				picName: '流星之夜',
 				pic: [],
 				topBackGroupImageIndex: 5,
-				inter: []
+				inter: [],
+				buyList: [
+					{
+						name:'全部订单',
+						icon: 'quanbudingdan',
+						color: '#a35c8f'
+					},
+					{
+						name:'待付款',
+						icon: 'daifukuan',
+						color: '#2f90b9'
+					},
+					{
+						name:'待收货',
+						icon: 'daishouhuo',
+						color: '#add5a2'
+					},
+					{
+						name:'售后',
+						icon: 'shouhou',
+						color: '#e7a23f'
+					}
+				]
 			}
 		},
 		async mounted() {
@@ -159,6 +189,26 @@
 </script>
 
 <style lang="scss" scoped>
+	.buyContainer{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		// width: 100%;
+		height: 80upx;
+		margin: 10upx 30upx;
+		.buyItem{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			span{
+				font-size: 40upx !important;
+			}
+			.butText{
+				padding-left: 10upx;
+				font-size: 32upx;
+			}
+		}
+	}
 	.UCenter-bg {
 		background: #fff;
 		background-size: 100% 100%;

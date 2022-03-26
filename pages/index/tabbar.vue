@@ -37,8 +37,8 @@
 				<view class="action" @click="NavChange" data-cur="buy">
 					<view class='cuIcon-cu-image'>
 						<!-- <view class="cu-tag badge">{{message}}</view> -->
-						<image v-if="PageCur=='buy'" src="https://s1.ax1x.com/2022/03/17/q9lUX9.png"></image>
-						<image v-if="PageCur != 'buy'" src="https://s1.ax1x.com/2022/03/17/q9QNZt.png"></image>
+						<image v-if="PageCur=='buy'" src="https://s1.ax1x.com/2022/03/26/qdflgf.png"></image>
+						<image v-if="PageCur != 'buy'" src="https://s1.ax1x.com/2022/03/26/qdfw80.png"></image>
 						
 					</view>
 					<view :class="PageCur=='buy'?'color_main':'text-gray'">旅游商城</view>

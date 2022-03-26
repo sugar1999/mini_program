@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3248640 */
-  src: url('//at.alicdn.com/t/font_3248640_3p60rwmwjrl.woff2?t=1648280142697') format('woff2'),
-       url('//at.alicdn.com/t/font_3248640_3p60rwmwjrl.woff?t=1648280142697') format('woff'),
-       url('//at.alicdn.com/t/font_3248640_3p60rwmwjrl.ttf?t=1648280142697') format('truetype');
+  src: url('//at.alicdn.com/t/font_3248640_35k98ymlhr4.woff2?t=1648297964372') format('woff2'),
+       url('//at.alicdn.com/t/font_3248640_35k98ymlhr4.woff?t=1648297964372') format('woff'),
+       url('//at.alicdn.com/t/font_3248640_35k98ymlhr4.ttf?t=1648297964372') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,26 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-quanbudingdan:before {
+  content: "\e600";
+}
+
+.icon-icon2:before {
+  content: "\e669";
+}
+
+.icon-daifukuan:before {
+  content: "\e633";
+}
+
+.icon-daishouhuo:before {
+  content: "\e62f";
+}
+
+.icon-shouhou:before {
+  content: "\e624";
 }
 
 .icon-weibiaoti--:before {
