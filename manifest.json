@@ -47,34 +47,6 @@
             "sdkConfigs" : {}
         }
     },
-    "quickapp" : {},
-    "mp-weixin" : {
-        "appid" : "wx8311892430487fbd",
-        "setting" : {
-            "urlCheck" : false
-        },
-        "usingComponents" : true,
-        "plugins" : {
-            "tencentvideo" : {
-                "version" : "1.3.17",
-                "provider" : "wxa75efa648b60994b"
-            }
-        },
-        "permission" : {
-            "scope.userLocation" : {
-                "desc" : "获取用户位置，制作地图定位功能"
-            }
-        }
-    },
-    "mp-alipay" : {
-        "usingComponents" : true
-    },
-    "mp-baidu" : {
-        "usingComponents" : true
-    },
-    "mp-toutiao" : {
-        "usingComponents" : true
-    },
     "uniStatistics" : {
         "enable" : false
     }
