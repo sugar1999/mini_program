@@ -49,5 +49,8 @@
     },
     "uniStatistics" : {
         "enable" : false
+    },
+    "mp-weixin" : {
+        "appid" : "wx8311892430487fbd"
     }
 }

@@ -57,7 +57,6 @@
 			...mapState({
 				cartList: state => state.cart.cartList,
 				cartValue: start => start.cart.cartList.length
-				// cartValue: 100
 			})
 		},
 		methods: {
@@ -95,7 +94,7 @@
 		display flex
 		flex-direction column
 		.header
-			height 130upx
+			height 150upx
 			line-height 90upx
 			background #FFFFFF
 			display flex
@@ -108,6 +107,8 @@
 			// 	font-size 32upx
 			.iconSize
 				font-size 36upx !important
+				position absolute
+				bottom 5upx
 			.iconfont
 				width 90upx
 				height 90upx
@@ -116,10 +117,13 @@
 				position absolute
 				left 65upx
 				font-size 30upx
+				bottom 5upx
 			text
+				position absolute
 				flex 1
+				left 330upx
 				font-size 32upx
-			
+				bottom 5upx
 		.content
 			height calc(100vh - 190upx)
 			.detailImg

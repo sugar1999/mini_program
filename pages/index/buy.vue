@@ -55,7 +55,6 @@
 			// 更新数据
 			this.categoryList = navListData.data
 			this.navIndex = this.categoryList[0].id
-			
 		},
 		methods:{
 			changeNavIndex(navIndex){

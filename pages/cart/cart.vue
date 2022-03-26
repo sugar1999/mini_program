@@ -258,7 +258,7 @@
 			.cartFooter
 				position fixed
 				display flex
-				bottom 48 px
+				bottom 130upx
 				height 96upx
 				line-height 96upx
 				width 100%

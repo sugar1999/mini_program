@@ -14,16 +14,19 @@
 				"navigationBarTitleText": "",
 				"navigationStyle": "custom"
 			}
-		},
-		{
-			"path": "pages/news/news",
-			"style": {
-				"navigationBarTitleText": "旅游详情"
-			}
 		}
 	],
 
 	"subPackages": [
+		{
+			"root":"pages/news",
+			"pages": [{
+				"path":"news",
+				"style":{
+					"navigationBarTitleText": "旅游详情"
+				}
+			}]
+		},
 		{
 			"root": "page_hot",
 			"pages": [{

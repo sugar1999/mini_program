@@ -6,6 +6,7 @@
 		<buy v-if="PageCur=='buy'"></buy>
 		<cart v-if="PageCur=='cart'"></cart>
 		<me v-if="PageCur=='me'"></me>
+		<!-- <detail v-if="PageCur=='detail'"></detail> -->
 
 		<view class="box">
 			<view class="cu-bar tabbar bg-white shadow foot">
@@ -76,6 +77,7 @@
 	import buy from './buy.vue'
 	import cart from '../cart/cart.vue'
 	import me from "./me.vue";
+	// import detail from './detail.vue'
 	export default {
 		components: {
 			index,
@@ -83,7 +85,8 @@
 			news,
 			buy,
 			cart,
-			me
+			me,
+			// detail
 		},
 		data() {
 			return {
@@ -102,6 +105,7 @@
 			};
 		},
 		onLoad(option) {
+			// console.log(option)
 			option.PageCur ? this.PageCur = option.PageCur : ''
 			// console.log(option.PageCur)
 			let that = this;
