@@ -4,7 +4,7 @@
 		<!-- <cases v-if="PageCur=='cases'"></cases> -->
 		<news v-if="PageCur=='news'"></news>
 		<buy v-if="PageCur=='buy'"></buy>
-		<cart v-if="PageCur=='cart'"></cart>
+		<cart v-if="PageCur=='cart'" :cartList="cartList"></cart>
 		<me v-if="PageCur=='me'"></me>
 		<!-- <detail v-if="PageCur=='detail'"></detail> -->
 
@@ -71,6 +71,8 @@
 </template>
 
 <script>
+	import request from '../../utils/request.js'
+	
 	import index from "./index.vue";
 	// import cases from "./main.vue";
 	import news from "./news.vue";
@@ -95,7 +97,8 @@
 				openId: '',
 				access_token: '',
 				tip: "我是提示",
-				duration: 1
+				duration: 1,
+				cartList: []
 			};
 		},
 		// 分享小程序
@@ -108,12 +111,25 @@
 			// console.log(option)
 			option.PageCur ? this.PageCur = option.PageCur : ''
 			// console.log(option.PageCur)
+			
 			let that = this;
 			//判断缓存中是否有用户数据，没有则获取
 			if (!uni.getStorageSync('encryptedData')) {
 				that.login(that);
 			} else {
 				console.log("已有缓存，直接进入")
+			}
+		},
+		watch:{
+			PageCur: {
+				async handler(newVal) {
+					if(newVal==='cart') {
+						const result = await request('/getShoppingData')
+						this.$store.commit('getCartListData',result.data)
+						this.cartList = this.$store.state.cart.cartList
+						// console.log(this.$store.state)
+					}
+				}
 			}
 		},
 		methods: {

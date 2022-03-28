@@ -194,7 +194,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		// width: 100%;
-		height: 80upx;
+		height: 100upx;
 		margin: 10upx 30upx;
 		.buyItem{
 			display: flex;

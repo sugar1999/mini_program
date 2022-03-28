@@ -54,24 +54,26 @@
 </template>
 
 <script>
+	// import request from '../../utils/request.js'
 	import {mapState, mapMutations, mapGetters} from 'vuex'
 	export default {
+		props:['cartList'],
 		data() {
 			return {
-				
 			};
 		},
 		computed: {
-			...mapState({
-				cartList: state => state.cart.cartList
-			}),
+			// ...mapState({
+			// 	cartList: state => state.cart.cartList
+			// }),
 			...mapGetters(['isAllSelected', 'totalPrice', 'totalCount'])
 		},
 		methods: {
 			...mapMutations({
 				changeCountMutation: 'changeCount',
 				changeSelected: 'changeSelected',
-				changeAll: 'changeAll'
+				changeAll: 'changeAll',
+				getCartListData: 'getCartListData'
 			}),
 			toLogin(){
 				uni.navigateTo({
@@ -87,12 +89,13 @@
 			handleSelected(event){
 				let {selected, index} = event.currentTarget.dataset;
 				this.changeSelected({selected, index})
+				
 			},
 			
 			// 全选/全不选
 			changeAllSelected(isSelected){
-				console.log(isSelected)
-				this.changeAll(isSelected)
+				// console.log(isSelected)
+				this.changeAll(isSelected,true)
 			},
 			login(that=this) {
 				uni.showModal({

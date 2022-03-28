@@ -42,16 +42,20 @@
 
 <script>
 	import {mapMutations, mapState} from 'vuex'
+	import request from '../../utils/request.js'
 	export default {
 		data() {
 			return {
 				shopDetail: {},
-				type: 'warning'
+				type: 'warning',
+				shoppingLength:0
 			}
 		},
-		onLoad(option) {
+		async onLoad(option) {
 			// console.log(option)
 			this.shopDetail = JSON.parse(option.shopItem)
+			let result = await request('/getShoppingData')
+			this.shoppingLength = result.data.length
 		},
 		computed: {
 			...mapState({
@@ -65,6 +69,7 @@
 			}),
 			// 添加商品至购物车
 			addShopCart(shopItem){
+				// console.log(shopItem)
 				this.changeCartList(shopItem)
 			},
 			//购买
