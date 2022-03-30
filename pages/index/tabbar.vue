@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<index v-if="PageCur=='index'"></index>
-		<!-- <cases v-if="PageCur=='cases'"></cases> -->
+		<cases v-if="PageCur=='cases'"></cases>
 		<news v-if="PageCur=='news'"></news>
 		<buy v-if="PageCur=='buy'"></buy>
 		<cart v-if="PageCur=='cart'" :cartList="cartList"></cart>
@@ -74,7 +74,7 @@
 	import request from '../../utils/request.js'
 	
 	import index from "./index.vue";
-	// import cases from "./main.vue";
+	import cases from "./main.vue"
 	import news from "./news.vue";
 	import buy from './buy.vue'
 	import cart from '../cart/cart.vue'
@@ -83,7 +83,7 @@
 	export default {
 		components: {
 			index,
-			// cases,
+			cases,
 			news,
 			buy,
 			cart,

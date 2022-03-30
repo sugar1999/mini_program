@@ -37,15 +37,6 @@
 			}]
 		},
 		{
-			"root": "page_guidance",
-			"pages": [{
-				"path": "guidance_index/index",
-				"style": {
-					"navigationStyle": "custom"
-				}
-			}]
-		},
-		{
 			"root": "page_secure",
 			"pages": [{
 					"path": "secure_index/secure_index",
@@ -58,8 +49,21 @@
 					"style": {
 						"navigationStyle": "custom"
 					}
-				}, {
-					"path": "secure_item/secure_attention",
+				}, 
+				{
+					"path": "secure_item/secure_setout",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "secure_item/secure_anquan",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "secure_item/secure_fangpian",
 					"style": {
 						"navigationStyle": "custom"
 					}
@@ -98,6 +102,7 @@
 		"backgroundColor": "#F8F8F8",
 		"backgroundTextStyle": "dark",
 		"backgroundColorTop": "#F1F4FA",
-		"backgroundColorBottom": "#F1F4FA"
+		"backgroundColorBottom": "#F1F4FA",
+		"navigationStyle": "custom"
 	}
 }

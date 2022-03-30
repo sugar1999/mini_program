@@ -30,7 +30,7 @@
 						<image class="cateImg" :src="categoryObj.imgUrl" mode=""></image>
 						<view  class='proItem' v-for='(item, index) in categoryObj.subCateList' :key='index' @click="toDetail(item)">
 							<view class="imgCss">
-								<image :src="item.wapBannerUrl" mode=""></image>
+								<image :src="item.wapBannerUrl" mode="" class="imgimg"></image>
 							</view>
 							<p>{{item.name}}</p>
 						</view>
@@ -43,6 +43,7 @@
 
 <script>
 	import request from '../../utils/request.js'
+	import { mapState} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -56,12 +57,19 @@
 			this.categoryList = navListData.data
 			this.navIndex = this.categoryList[0].id
 		},
+		computed:{
+			...mapState({
+				cartList: state => state.cart.cartList,
+				cartValue: start => start.cart.cartList.length
+			})
+		},
 		methods:{
 			changeNavIndex(navIndex){
 				this.navIndex = navIndex
 			},
 			toDetail(shopItem) {
-				console.log(JSON.stringify(shopItem))
+				console.log(this.$store.state.cart.cartList)
+				// console.log(JSON.stringify(shopItem))
 				uni.navigateTo({
 					url:'../me/detail?shopItem='+JSON.stringify(shopItem)
 				})
@@ -143,7 +151,7 @@
 						.imgCss
 							width 150upx
 							height 150upx
-							image 
+							.imgimg 
 								width 120upx 
 								height 120upx
 								margin-top 15upx

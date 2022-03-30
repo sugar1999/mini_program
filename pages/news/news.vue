@@ -1,14 +1,19 @@
 <!-- 新闻 详情 -->
 <template>
 	<view class="container">
+		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+			<block slot="backText">返回</block>
+			<block slot="content">注意事项</block>
+		</cu-custom>
 		<view style="background-color: #FFFFFF;padding: 30rpx 30rpx 30rpx 30rpx;">
 			<view class="titleBox text-xl text-black text-bold">{{title}}</view>
 			<view class="timeBox text-df text-gray margin-top-sm margin-bottom-sm">{{time}}</view>
+			<view class="nameBox">{{authorName}}</view>
 			<image mode="widthFix" :src="img"></image>
 
 			<!-- 中间文章区域 -->
 			<view class="contentBox text-lg text-black margin-top-sm">
-				<view v-html="message"></view>
+				<view v-html="message" style="text-indent: 2em;"></view>
 			</view>
 		</view>
 		
@@ -38,7 +43,7 @@
 			this.message = option.message;
 			this.title = option.title;
 			this.time = option.time;
-			// this.authorName = option.authorName;
+			this.authorName = option.authorName;
 			this.img = option.img;
 		},
 		methods: {
@@ -58,10 +63,17 @@
 
 <style lang="scss" scoped>
 	.container {
+		position: relative;
 		background-color: #f2f2f2;
 		width: 750rpx;
 	}
 	image {
 		width: 750rpx;
+	}
+	.nameBox{
+		position: absolute;
+		color: gray;
+		right: 30rpx;
+		top: 100rpx;
 	}
 </style>

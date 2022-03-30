@@ -19,15 +19,15 @@
 					<view class="shopItem">
 						<image class="shopImg" :src="item.wapBannerUrl" mode=""></image>
 						<view class="shopInfo">
-							<text>{{item.name}}</text>
+							<text style="line-height:60upx">{{item.name}}</text>
 							<text class="price">￥{{item.retailPrice}}</text>
 						</view>
 					</view>
 					<!-- 控制数量 -->
 					<view class="countCtrl">
-						<text class="add" @click=changeCount :data-type='true' :data-index='index'> + </text>
-						<text class="count"> {{item.count}} </text>
-						<text class="del" @click=changeCount :data-type='false' :data-index='index'> - </text>
+						<text class="add countCtrlText" @click=changeCount :data-type='true' :data-index='index'> + </text>
+						<text class="count countCtrlText"> {{item.count}} </text>
+						<text class="del countCtrlText" @click=changeCount :data-type='false' :data-index='index'> - </text>
 					</view>
 				</view>
 				
@@ -189,24 +189,7 @@
 			font-size 32upx
 			line-height 80upx
 			margin-left 30upx
-		.header
-			display flex
-			background #eee
-			text
-				width 33.333%
-				height 80upx
-				line-height 80upx
-				text-align center
-				font-size 26upx
 		.contentContainer
-			
-			button
-				width 480upx
-				height 92upx
-				background #DD1A21
-				color #fff
-				font-size 32upx
-				line-height 92upx
 			.addMore
 				text-align center
 				font-size 26upx
@@ -239,15 +222,14 @@
 						display flex
 						flex-direction column
 						margin-left 20upx
-						text
-							line-height 60upx
 						.price
+							line-height 60upx
 							color: #BB2C08
 				.countCtrl
 					position absolute
 					right 20upx
 					bottom 30upx
-					text
+					.countCtrlText
 						display inline-block
 						width 60upx
 						height 50upx
@@ -261,8 +243,8 @@
 			.cartFooter
 				position fixed
 				display flex
-				bottom 130upx
-				height 96upx
+				bottom 60upx
+				height 160upx
 				line-height 96upx
 				width 100%
 				background #fff
@@ -294,5 +276,4 @@
 		.hint
 			text-align center
 			font-size 28upx
-		
 </style>

@@ -42,7 +42,7 @@ const mutations = {
 		let item = state.cartList.find(item => item.id === shopItem.id)
 		// 如果之前有
 		if (item) {
-			console.log('xx')
+			// console.log('xx')
 			item.count += 1;
 		} else { // 如果之前没有
 			shopItem.count = 1;

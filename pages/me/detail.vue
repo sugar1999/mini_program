@@ -47,15 +47,13 @@
 		data() {
 			return {
 				shopDetail: {},
-				type: 'warning',
-				shoppingLength:0
+				type: 'warning'
 			}
 		},
 		async onLoad(option) {
 			// console.log(option)
 			this.shopDetail = JSON.parse(option.shopItem)
 			let result = await request('/getShoppingData')
-			this.shoppingLength = result.data.length
 		},
 		computed: {
 			...mapState({
@@ -78,7 +76,7 @@
 			},
 			// 跳转至购物车
 			toShopCart(){
-				console.log('跳转。。。');
+				// console.log('跳转。。。');
 				wx.navigateTo({
 					url: '../index/tabbar?PageCur=cart'
 				})

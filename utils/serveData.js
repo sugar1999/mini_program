@@ -6,11 +6,11 @@ export default (url, data, method) => {
 			data:data,
 			method:method,
 			success: (res) => {
-				console.log(res.data,'serveData')
+				// console.log(res.data,'serveData')
 				resolve(res.data)
 			},
 			fail: (error) => {
-				console.log(error,'serveData')
+				// console.log(error,'serveData')
 				reject(error);
 			}
 		})

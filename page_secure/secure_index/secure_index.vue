@@ -5,6 +5,7 @@
 				<block slot="backText">返回</block>
 				<block slot="content">安全知识</block>
 			</cu-custom>
+			<u-notice-bar :text="text1" mode="closable"></u-notice-bar>
 			<view class='nav-list margin-top'>
 				<navigator open-type="navigate" hover-class='none' :url="item.url" :class=""
 				 v-for="(item, index) in secure_indexList" :key="index">
@@ -27,7 +28,8 @@
 		name: 'Components',
 		data() {
 			return {
-				secure_indexList:[]
+				secure_indexList:[],
+				text1: "请各位游客注意各个景点的安全注意事项！保护自己的身心安全。"
 			}
 		},
 		async onLoad() {
@@ -539,6 +541,7 @@
 		font-size: 40rpx;
 	 }
 	 .myfont2{
+		 width: 100%;
 		margin-top: 100px;
 		font-size: small;
 		color: #fffef9;
@@ -547,6 +550,7 @@
 		left: 5%;
 		font-style: italic;
 		opacity: 0.7;
+		text-align: center;
 	 }
 	 .mytitle{
 		 color: #fffef9;

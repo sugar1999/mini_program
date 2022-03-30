@@ -18,21 +18,42 @@
 					<p>{{item.content}}</p>
 					<p>{{item.text}}</p>
 				</view>
-
 			</view>
-			
 			<u-divider text="已经到底了"></u-divider>
-			
 		</view>
 		<!-- 热门 -->
-		<view v-if="currentPageId===1">
-			<view v-for="(item,index) in dataList" class="oneContent" :key="index">
-				<image :src="item.imgUrl"></image>
+		<view v-if="currentPageId===1" class="wrap">
+			<view class="wrapItem" v-for="(item,index) in dataList" :key="index">
+				<view class="leftImg">
+					<image class="imgCss" :src="item.imgUrl"></image>
+				</view>
+				<view class="content">
+					<p>{{item.content}}</p>
+					<p>{{item.text}}</p>
+				</view>
 			</view>
+			<u-divider text="已经到底了"></u-divider>
 		</view>
 		<!-- 花圃 -->
-
+		<view v-if="currentPageId===2" class="wrap">
+			<u-empty mode="data" icon="http://cdn.uviewui.com/uview/empty/data.png">
+			</u-empty>
+		</view>
 		<!-- 文化 -->
+		<view v-if="currentPageId===3" class="wrap">
+			<u-empty mode="data" icon="http://cdn.uviewui.com/uview/empty/data.png">
+			</u-empty>
+		</view>
+		<!-- 风俗 -->
+		<view v-if="currentPageId===4" class="wrap">
+			<u-empty mode="data" icon="http://cdn.uviewui.com/uview/empty/data.png">
+			</u-empty>
+		</view>
+		<!-- 打卡 -->
+		<view v-if="currentPageId===5" class="wrap">
+			<u-empty mode="data" icon="http://cdn.uviewui.com/uview/empty/data.png">
+			</u-empty>
+		</view>
 	</view>
 </template>
 
@@ -119,12 +140,14 @@
 					text-indent: 2em;
 					width: 100%;
 					font-size: 28rpx;
-					height: 190rpx;
-					overflow: hidden;
+					height: 182rpx;
+					white-space:normal;
+					word-break: break-all;
 					text-overflow: ellipsis;
-					display: -webkit-box;
-					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 5;
+					display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+					-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+					-webkit-line-clamp: 5; /** 显示的行数 **/
+					overflow: hidden;  /** 隐藏超出的内容 **/
 				}
 			}
 		}

@@ -11,7 +11,7 @@
 				<view class="page-section-spacing" style="height: 360rpx;">
 					<swiper class="swiper" style="height: 360rpx;" circular="true" indicator-dots="true" autoplay="true"
 						interval="3500" duration="600">
-						<swiper-item class="swiper-list" style="height: 360rpx;" v-for="(item, index) in bannerList"
+						<swiper-item class="swiper-list" v-for="(item, index) in bannerList"
 							:key="index">
 							<view class="swiper-item uni-bg-red" style="height: 360rpx;">
 								<image class="swiper-img" :src="item.imageUrl" style="height: 360rpx;" mode=""></image>
@@ -83,10 +83,6 @@
 		data() {
 			return {
 				duration: 1,
-				scrollTop: 0,
-				old: {
-					scrollTop: 0
-				},
 				bannerList: [],
 				categories: [],
 				curriculum: [],
@@ -103,10 +99,6 @@
 			this.scenery = result2.data.scenery
 		},
 		methods: {
-			scroll: function(e) {
-				// console.log(e)
-				this.old.scrollTop = e.detail.scrollTop
-			},
 			goCategorieslist: function(e) {
 				// console.log(e.currentTarget.dataset.mid)
 				if (e.currentTarget.dataset.mid == 1) {
@@ -115,16 +107,16 @@
 					})
 				} else if (e.currentTarget.dataset.mid == 2) {
 					uni.navigateTo({
-						url: ''
+						url: './tabbar?PageCur=buy'
 					})
 				} else if (e.currentTarget.dataset.mid == 3) {
 					uni.navigateTo({
 						url: '/page_secure/secure_index/secure_index'
 					})
 				} else if (e.currentTarget.dataset.mid == 4) {
-					// uni.navigateTo({
-					// 	url: '/page_guidance/guidance_index/index'
-					// })
+					uni.navigateTo({
+						url: './tabbar?PageCur=cases'
+					})
 				}
 			},
 			goProjectList() {
@@ -141,6 +133,16 @@
 	}
 </script>
 <style lang="scss" scoped>
+	@keyframes show {
+		0% {transform: translateY(-50px);}
+		60% {transform: translateY(40upx);}
+		100% {transform: translateY(0px);}
+	}
+	@-webkit-keyframes show {
+		0% {	transform: translateY(-50px);}
+		60% {transform: translateY(40upx);}
+		100% {transform: translateY(0px);}
+	}
 	.swiper-box {
 		flex: 1;
 		height: 360rpx;
@@ -237,20 +239,18 @@
 
 	.nav-content {
 		width: 100%;
+		height: 90rpx;
 		padding: 15rpx;
 		display: inline-block;
-		overflow-wrap: break-word;
-		white-space: normal;
+		white-space:normal;
+		word-break: break-all;
+		text-overflow: ellipsis;
+		display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+		-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+		-webkit-line-clamp: 2; /** 显示的行数 **/
+		overflow: hidden;  /** 隐藏超出的内容 **/
 	}
 
-	.nav-btn {
-		width: 200rpx;
-		height: 60rpx;
-		margin: 8rpx auto;
-		text-align: center;
-		line-height: 60rpx;
-		border-radius: 10rpx;
-	}
 
 	.bg-index1 {
 		background-color: #19CF8A;
