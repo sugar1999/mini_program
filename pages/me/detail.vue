@@ -9,7 +9,6 @@
 			<span>返回</span>
 			<text> 乡游购 </text>
 		</view>
-		
 		<!-- 内容区 -->
 		<scroll-view class="content" scroll-y="true">
 			<image class="detailImg" :src="shopDetail.wapBannerUrl" mode=""></image>
@@ -24,13 +23,12 @@
 				<view>{{shopDetail.describe}}</view>
 			</view>
 		</scroll-view>
-		
 		<!-- 底部导航 -->
 		<view class="detailFooter">
 			<view class="shopCart" @click="toShopCart">
 				<icon class="iconfont icon-gouwuche iconGouwuche"></icon>
 				<view class="box" v-if="cartList.length!==0">
-					<u-badge numberType="ellipsis" :type="type " max="99" :value="cartValue" bgColor="red" color="white" showZero></u-badge>
+					<u-badge numberType="ellipsis" :type="type " max="99" :value="cartList.length" bgColor="red" color="white" showZero></u-badge>
 				</view>
 				<!-- <text class="count" v-if="cartList.length">{{cartList.length}}</text> -->
 			</view>
@@ -47,28 +45,28 @@
 		data() {
 			return {
 				shopDetail: {},
-				type: 'warning'
+				type: 'warning',
+				cartList: []
 			}
 		},
 		async onLoad(option) {
-			// console.log(option)
 			this.shopDetail = JSON.parse(option.shopItem)
-			let result = await request('/getShoppingData')
-		},
-		computed: {
-			...mapState({
-				cartList: state => state.cart.cartList,
-				cartValue: start => start.cart.cartList.length
-			})
+			let res = await request('/query')
+			this.cartList = res.data.shoppingcart
 		},
 		methods: {
 			...mapMutations({
 				changeCartList: 'changeCartList'
 			}),
 			// 添加商品至购物车
-			addShopCart(shopItem){
+			async addShopCart(shopItem){
 				// console.log(shopItem)
 				this.changeCartList(shopItem)
+				wx.showToast({
+				     title: '成功',
+				     icon: 'success',
+				     duration: 2000//持续的时间
+				   })
 			},
 			//购买
 			purchase() {
@@ -87,7 +85,8 @@
 				  delta:1
 				})
 			}
-		}
+		},
+		
 	}
 </script>
 

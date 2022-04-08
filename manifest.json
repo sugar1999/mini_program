@@ -52,9 +52,9 @@
     },
     "mp-weixin" : {
         "appid" : "wx8311892430487fbd",
-				"setting" : {
-					"urlCheck" : false,
-					"checkSiteMap": false
-				}
+        "setting" : {
+            "urlCheck" : false,
+            "checkSiteMap" : false
+        }
     }
 }

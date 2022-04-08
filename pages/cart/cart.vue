@@ -54,18 +54,21 @@
 </template>
 
 <script>
-	// import request from '../../utils/request.js'
+	import request from '../../utils/request.js'
 	import {mapState, mapMutations, mapGetters} from 'vuex'
 	export default {
-		props:['cartList'],
 		data() {
 			return {
 			};
 		},
+		async mounted() {
+			let res = await request('/query')
+			this.$store.commit('getCartList',res.data.shoppingcart)
+		},
 		computed: {
-			// ...mapState({
-			// 	cartList: state => state.cart.cartList
-			// }),
+			...mapState({
+				cartList: state => state.cart.cartList
+			}),
 			...mapGetters(['isAllSelected', 'totalPrice', 'totalCount'])
 		},
 		methods: {

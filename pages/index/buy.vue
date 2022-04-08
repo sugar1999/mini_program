@@ -27,8 +27,8 @@
 			<view class="rightContainer">
 				<scroll-view scroll-y="true" class="scrollContainer">
 					<view class="proList">
-						<image class="cateImg" :src="categoryObj.imgUrl" mode=""></image>
-						<view  class='proItem' v-for='(item, index) in categoryObj.subCateList' :key='index' @click="toDetail(item)">
+						<image class="cateImg" :src="subcatelistBanner" mode=""></image>
+						<view  class='proItem' v-for='(item, index) in categoryObj' :key='index' @click="toDetail(item)">
 							<view class="imgCss">
 								<image :src="item.wapBannerUrl" mode="" class="imgimg"></image>
 							</view>
@@ -48,28 +48,23 @@
 		data() {
 			return {
 				categoryList: [],
-				navIndex: 0
+				navIndex: 0,
+				merchandise:[]
 			}
 		},
 		async mounted() {
-			let navListData = await request('/getBuysData')
-			// 更新数据
-			this.categoryList = navListData.data
+			let res = await request('/query')
+			this.$store.commit('getCartList',res.data.shoppingcart)
+			this.merchandise = res.data
+			this.categoryList = this.merchandise.buysdata
 			this.navIndex = this.categoryList[0].id
-		},
-		computed:{
-			...mapState({
-				cartList: state => state.cart.cartList,
-				cartValue: start => start.cart.cartList.length
-			})
 		},
 		methods:{
 			changeNavIndex(navIndex){
 				this.navIndex = navIndex
 			},
 			toDetail(shopItem) {
-				console.log(this.$store.state.cart.cartList)
-				// console.log(JSON.stringify(shopItem))
+				console.log(shopItem)
 				uni.navigateTo({
 					url:'../me/detail?shopItem='+JSON.stringify(shopItem)
 				})
@@ -77,7 +72,21 @@
 		},
 		computed: {
 			categoryObj(){
-				return (this.categoryList.filter(item => item.id === this.navIndex))[0]
+				let subcatelist = []
+				for (let i in this.merchandise.subcatelist) {
+					if(this.merchandise.subcatelist[i].superCategoryId === this.navIndex){
+						subcatelist.push(this.merchandise.subcatelist[i])
+					}
+				}
+				return subcatelist
+			},
+			subcatelistBanner() {
+				let bannerImgUrl = ''
+				for (let i in this.categoryList) {
+					if(this.categoryList[i].id===this.navIndex)
+					bannerImgUrl = this.categoryList[i].imgUrl
+				}
+				return bannerImgUrl
 			}
 		}
 	}
