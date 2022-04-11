@@ -5,9 +5,9 @@
 			<block slot="content">旅游购物</block>
 		</cu-custom>
 		<!-- 头部 -->
-		<view class="searchHeader">
+		<!-- <view class="searchHeader">
 			<view class="search">搜索商品</view>
-		</view>
+		</view> -->
 		<!-- 左侧 -->
 		<view class="contentContainer">
 			<view class="leftContainer">
